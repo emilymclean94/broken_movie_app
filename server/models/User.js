@@ -1,9 +1,12 @@
 const { Schema, model } = require('mongoose');
 const movieScema = require("./Movie");
+
+
 const userSchema = new Schema(
   {
     firstname: { type: String, required: true },
     username: { type: String, required: true, unique: true },
+    avatar: { type: String, required: true }, 
     email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'], },
     myList: [movieScema],
     watched: [movieScema],
