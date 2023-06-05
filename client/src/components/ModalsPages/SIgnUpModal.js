@@ -2,20 +2,21 @@ import React from 'react';
 import { Button, Label, TextInput, Textarea, Modal } from 'flowbite';
 import AvatarSelection from './AvatarSelection';
 import { useHistory } from 'react-router-dom';
+import AvatarImages from '../AvatarImages';
 
 
 const SignUp = () => {
     const [selectedAvatar, setSelectedAvatar] = useState(null);
     const avatars = [
-    { id: 1, image: 'avatar1.png' },
-    { id: 2, image: 'avatar2.png' },
-    { id: 3, image: 'avatar3.png' },
-    { id: 4, image: 'avatar4.png' },
-    { id: 5, image: 'avatar5.png' },
-    { id: 6, image: 'avatar6.png' },
-    { id: 7, image: 'avatar7.png' },
-    { id: 8, image: 'avatar8.png' },
-    { id: 9, image: 'avatar9.png' },
+    { id: 1, image: 'Avatar1.png' },
+    { id: 2, image: 'Avatar2.png' },
+    { id: 3, image: 'Avatar3.png' },
+    { id: 4, image: 'Avatar4.png' },
+    { id: 5, image: 'Avatar5.png' },
+    { id: 6, image: 'Avatar6.png' },
+    { id: 7, image: 'Avatar7.png' },
+    { id: 8, image: 'Avatar8.png' },
+    { id: 9, image: 'Avatar9.png' },
     // creates a 3x3 grid of avatars theoretically
     ];
     const history = useHistory();
