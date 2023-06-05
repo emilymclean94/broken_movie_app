@@ -1,12 +1,20 @@
 import React from 'react';
 import { Button, Label, TextInput, Modal } from 'flowbite';
 import { useHistory } from 'react-router-dom';
-import AvatarImages from '../AvatarImages';
+import{ useState } from 'react';
 
 
 const LogIn = () => {
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const history = useHistory();
+
+    const handleModalOpen = () => {
+        setIsModalOpen(true);
+    };
+    
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    };
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -18,13 +26,14 @@ const LogIn = () => {
 
     return (
         <div>
-        <Button onClick={onClick}>
+        <Button onClick={handleModalOpen}>
         LogIn
         </Button>
 
-        <Modal onClose={onClose}
+        <Modal onClose={handleModalClose}
         popup
-        size="md">
+        size="md"
+        open={isModalOpen}>
         <Modal.Header />
         <Modal.Body>
 <div className="space-y-6">

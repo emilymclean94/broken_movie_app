@@ -2,11 +2,13 @@ import React from 'react';
 import { Button, Label, TextInput, Textarea, Modal } from 'flowbite';
 import AvatarSelection from './AvatarSelection';
 import { useHistory } from 'react-router-dom';
-import AvatarImages from '../AvatarImages';
+import { useState } from 'react';
 
 
 const SignUp = () => {
     const [selectedAvatar, setSelectedAvatar] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const avatars = [
     { id: 1, image: 'Avatar1.png' },
     { id: 2, image: 'Avatar2.png' },
@@ -21,30 +23,38 @@ const SignUp = () => {
     ];
     const history = useHistory();
 
-  const handleAvatarSelect = (avatarId) => {
+    const handleModalOpen = () => {
+        setIsModalOpen(true);
+    };
+    
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleAvatarSelect = (avatarId) => {
     setSelectedAvatar(avatarId);
-  };
+    };
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('Sign Up Successful:', selectedAvatar);
         selectedAvatar = null;
         // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
         history.push('/feed'); 
+        handleModalClose();
     }
-       
-    
-
 
     return (
         <div>
-        <Button onClick={onClick}>
+        <Button onClick={handleModalOpen}>
         Sign Up
         </Button>
 
 <Modal
-onClose={onClose}
+onClose={handleModalClose}
 popup
-size="md">
+size="md"
+open={isModalOpen}>
         <Modal.Header />
         <Modal.Body>
 <div className="space-y-6">
@@ -69,12 +79,12 @@ size="md">
         />
         </div>
         <TextInput
-        icon={fine-emailletter-icon}
+        icon={fine-person-icon}
         id="firstname1"
         placeholder="JaneDoe"
         required
         iconRight={decide-where-we-want-icon}
-        type="email"
+        type="firstname"
         />
     </div>
                                         //*LAST NAME    
