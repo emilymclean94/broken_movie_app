@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Label, TextInput, Modal } from 'flowbite';
 import { useHistory } from 'react-router-dom';
+import AvatarImages from '../AvatarImages';
 
 
 const LogIn = () => {
@@ -14,7 +15,7 @@ const LogIn = () => {
         history.push('/feed'); 
     }
 
-    
+
     return (
         <div>
         <Button onClick={onClick}>
