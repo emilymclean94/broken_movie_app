@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FriendsWatchList = () => {
+const FriendsWatchedList = () => {
     return (
         <div>Friend watch lists</div>
     )
 }
-export default FriendsWatchList;
+export default FriendsWatchedList;
