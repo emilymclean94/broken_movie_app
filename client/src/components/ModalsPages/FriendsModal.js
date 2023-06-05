@@ -37,12 +37,8 @@ const FriendsModal = () => {
             <ul className="space-y-4">
                 {friends.map((friend) => (
                 <li key={friend.id} className="flex items-center">
-                    <img src={friend.avatar}
-                        alt={friend.username}
-                        className="w-10 h-10 rounded-full mr-4"
-                    />
-                    <a href={`/profile/${friend.username}`}
-                    className="text-blue-500 hover:underline">
+                    <img src={friend.avatar} alt={friend.username} className="w-10 h-10 rounded-full mr-4"/>
+                    <a href={`/profile/${friend.username}`} className="text-blue-500 hover:underline"> 
                     {friend.username}
                     </a>
               </li>
