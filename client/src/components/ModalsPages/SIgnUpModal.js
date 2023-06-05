@@ -102,35 +102,35 @@ open={isModalOpen}>
         <div className="mb-2 block">
         <Label htmlFor="firstname1" value="Your first name"/>
         </div>
-        <TextInput icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required iconRight={decide-where-we-want-icon} type="firstname" />
+        <TextInput icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required iconRight={decide-where-we-want-icon} type="firstname" value={firstName}/>
     </div>  
 //*EMAIL 
         <div>
             <div className="mb-2 block">
             <Label htmlFor="email1" value="Your email"/>
             </div>
-            <TextInput icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
+            <TextInput value={email} icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
         </div>
 //*USERNAME
     <div>
             <div className="mb-2 block">
             <Label htmlFor="username1" value="Your username"/>
             </div>
-            <TextInput id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
+            <TextInput value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
     </div>
 //*PASSWORD
     <div>
         <div className="mb-2 block">
             <Label htmlFor="password1" value="Your password"/>
         </div>
-            <TextInput id="password1" placeholder="********" onChange={handlePasswordChange} required type="password"/>
+            <TextInput value={password} id="password1" placeholder="********" onChange={handlePasswordChange} required type="password"/>
     </div>
 //*FAVORITE GENRE
     <div>
         <div className="mb-2 block">
             <Label htmlFor="genre1" value="Your favorite genre!"/>
         </div>
-            <TextInput id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
+            <TextInput value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
     </div>
 //*BIO
     <div>
@@ -138,7 +138,7 @@ open={isModalOpen}>
             <Label htmlFor="bio" value="Your bio" />
             {/* take out value to get rid of the label on the form */}
         </div>
-            <Textarea id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
+            <Textarea value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
     </div>
         <Button type="submit">
         Sign Up
