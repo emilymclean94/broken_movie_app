@@ -3,7 +3,15 @@ import { Button, Label, TextInput, Textarea,Modal } from 'flowbite';
 
 export default function SignUp = () => {
     return (
-        <Modal>
+        <div>
+        <Button onClick={onClick}>
+        Sign Up
+      </Button>
+
+        <Modal
+        onClose={onClose}
+        popup
+        size="md">
         <Modal.Header />
         <Modal.Body>
 <div className="space-y-6">
@@ -105,5 +113,6 @@ export default function SignUp = () => {
   </div>
   </Modal.Body>
 </Modal>
+</div>
     );
 }
