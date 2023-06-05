@@ -8,7 +8,12 @@ import { useState } from 'react';
 const SignUp = () => {
     const [selectedAvatar, setSelectedAvatar] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [firstName, setFirstName] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [bio, setBio] = useState('');
+    const [password, setPassword] = useState('');
+    const [genre, setGenre] = useState('');
     const avatars = [
     { id: 1, image: 'Avatar1.png' },
     { id: 2, image: 'Avatar2.png' },
@@ -23,6 +28,28 @@ const SignUp = () => {
     ];
     const history = useHistory();
 
+    const handleFirstNameChange = (event) => {
+        setFirstName(event.target.value);
+    };
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+    
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
+    };
+    
+    const handleGenreChange = (event) => {
+        setGenre(event.target.value);
+    };
+    
+    const handleBioChange = (event) => {
+        setBio(event.target.value);
+    };
+    
     const handleModalOpen = () => {
         setIsModalOpen(true);
     };
@@ -70,100 +97,48 @@ open={isModalOpen}>
     />
     </div>
 <form onSubmit={handleFormSubmit}>
-                                    //*FIRST NAME
+//*FIRST NAME
     <div> 
         <div className="mb-2 block">
-        <Label
-         htmlFor="firstname1"
-        value="Your first name"
-        />
+        <Label htmlFor="firstname1" value="Your first name"/>
         </div>
-        <TextInput
-        icon={fine-person-icon}
-        id="firstname1"
-        placeholder="JaneDoe"
-        required
-        iconRight={decide-where-we-want-icon}
-        type="firstname"
-        />
-    </div>
-                                        //*LAST NAME    
+        <TextInput icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required iconRight={decide-where-we-want-icon} type="firstname" />
+    </div>  
+//*EMAIL 
         <div>
             <div className="mb-2 block">
-            <Label
-            htmlFor="email1"
-            value="Your email"
-            />
+            <Label htmlFor="email1" value="Your email"/>
             </div>
-        <TextInput
-        icon={fine-emailletter-icon}
-        id="email1"
-        placeholder="janedoe@email.com"
-        required
-        iconRight={decide-where-we-want-icon}
-        type="email"
-        />
+            <TextInput icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
         </div>
-                                        //*EMAIL
-            <div>
+//*USERNAME
+    <div>
             <div className="mb-2 block">
-            <Label
-            htmlFor="username1"
-            value="Your username"
-            />
+            <Label htmlFor="username1" value="Your username"/>
             </div>
-            <TextInput
-            id="username1"
-            placeholder="j@neDoe33"
-            required
-            type="username"
-            />
-            </div>
-                                    //*PASSWORD
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="password1"
-            value="Your password"
-            />
-        </div>
-            <TextInput
-            id="password1"
-            placeholder="********"
-            required
-            type="password"
-            />
+            <TextInput id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
     </div>
-                                    //*FAVORITE GENRE
+//*PASSWORD
     <div>
         <div className="mb-2 block">
-            <Label
-            htmlFor="genre1"
-            value="Your favorite genre!"
-            />
+            <Label htmlFor="password1" value="Your password"/>
         </div>
-            <TextInput
-            id="genre1"
-            placeholder="Horror"
-            required
-            type="genre"
-            />
+            <TextInput id="password1" placeholder="********" onChange={handlePasswordChange} required type="password"/>
     </div>
-                                    //*BIO
+//*FAVORITE GENRE
     <div>
         <div className="mb-2 block">
-            <Label
-            htmlFor="bio"
-            value="Your bio" 
-//take out value to get rid of the label on the form
-            />
+            <Label htmlFor="genre1" value="Your favorite genre!"/>
         </div>
-            <Textarea
-            id="bio"
-            placeholder="Tell us a little about yourself!"
-            required
-            rows={4}
-            />
+            <TextInput id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
+    </div>
+//*BIO
+    <div>
+        <div className="mb-2 block">
+            <Label htmlFor="bio" value="Your bio" />
+            {/* take out value to get rid of the label on the form */}
+        </div>
+            <Textarea id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
     </div>
         <Button type="submit">
         Sign Up

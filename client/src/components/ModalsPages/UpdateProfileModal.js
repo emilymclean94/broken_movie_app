@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Label, TextInput, Modal, Textarea } from 'flowbite';
-import{ useState } from 'react';
+
 import AvatarSelection from './AvatarSelection';
 
 const UpdateProfile = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedAvatar, setSelectedAvatar] = useState(null);
-
+    const [firstName, setFirstName] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [bio, setBio] = useState('');
+    const [password, setPassword] = useState('');
+    const [genre, setGenre] = useState('');
     const avatars = [
         { id: 1, image: 'Avatar1.png' },
         { id: 2, image: 'Avatar2.png' },
@@ -19,6 +24,28 @@ const UpdateProfile = () => {
         { id: 9, image: 'Avatar9.png' },
         // creates a 3x3 grid of avatars theoretically
         ];
+        const handleFirstNameChange = (event) => {
+            setFirstName(event.target.value);
+        };
+        const handlePasswordChange = (event) => {
+            setPassword(event.target.value);
+        };
+        const handleEmailChange = (event) => {
+            setEmail(event.target.value);
+        };
+        
+        const handleUsernameChange = (event) => {
+            setUsername(event.target.value);
+        };
+        
+        const handleGenreChange = (event) => {
+            setGenre(event.target.value);
+        };
+        
+        const handleBioChange = (event) => {
+            setBio(event.target.value);
+        };
+        
     const handleAvatarSelect = (avatarId) => {
         setSelectedAvatar(avatarId);
     };
@@ -33,6 +60,17 @@ const UpdateProfile = () => {
         console.log('Update Successful:');
         handleModalClose();
     }
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try{
+            const response = await fetch('our db or api for user info');
+            const data = await response.json();
+            console.log(data);
+            }  catch (error) {
+                console.error('Error fetching profile data:', error);
+            }
+        }; fetchUserData();
+    }, []);
 
     return (
         <div>
@@ -40,18 +78,13 @@ const UpdateProfile = () => {
         Update Profile
         </Button>
 
-<Modal
-onClose={handleModalClose}
-popup
-size="md"
-open={isModalOpen}>
-        <Modal.Header />
-        <Modal.Body>
+<Modal onClose={handleModalClose} popup size="md" open={isModalOpen}>
+<Modal.Header />
+<Modal.Body>
 <div className="space-y-6">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-            Update!
-            </h3>
-                                    //*AVATAR SELECTION 
+    <h3 className="text-xl font-medium text-gray-900 dark:text-white">Update!</h3>
+<form onSubmit={handleFormSubmit}>
+//*AVATAR SELECTION     
     <div> //TODO check out how to show and update avatar
     <AvatarSelection
         avatars={avatars}
@@ -59,107 +92,49 @@ open={isModalOpen}>
         onAvatarSelect={handleAvatarSelect}
     />
     </div>
-<form onSubmit={handleFormSubmit}>
-                                    //*FIRST NAME
+//*FIRST NAME
     <div> 
         <div className="mb-2 block">
-        <Label
-         htmlFor="nameupdate"
-        value="Update your first name"
-        />
+        <Label htmlFor="nameupdate" value="Update your first name"/>
         </div>
-        <TextInput
-        icon={fine-emailletter-icon}
-        id="nameupdate"
-        placeholder="JaneDoe"
-        required
-        iconRight={decide-where-we-want-icon}
-        type="text"
-        />
+        <TextInput icon={fine-emailletter-icon} id="nameupdate" placeholder={`${user.email}`} onChange={handleFirstNameChange} iconRight={decide-where-we-want-icon} type="text"/>
     </div>
-                                        //*LAST NAME    
+//*LAST NAME    
         <div>
             <div className="mb-2 block">
-            <Label
-            htmlFor="emailupdate"
-            value="Update your email"
-            />
+            <Label htmlFor="emailupdate" value="Update your email"/>
             </div>
-        <TextInput
-        icon={fine-emailletter-icon}
-        id="emailupdate"
-        //TODO: have it be the infor from their profile
-        //! placeholder=${...user.email} 
-        //?MAYBE??
-        required
-        iconRight={decide-where-we-want-icon}
-        type="email"
-        />
+            <TextInput icon={fine-emailletter-icon} id="emailupdate" placeholder={`${user.email}`} onChange={handleEmailChange} iconRight={decide-where-we-want-icon} type="email"/>
         </div>
-                                        //*EMAIL
-            <div>
+//*EMAIL
+        <div>
             <div className="mb-2 block">
-            <Label
-            htmlFor="updateusername"
-            value="Update your username"
-            />
+            <Label htmlFor="updateusername" value="Update your username"/>
             </div>
-            <TextInput
-            id="updateusername"
-            //TODO: have it be the infor from their profile
-            required
-            type="text"
-            />
+            <TextInput id="updateusername" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
+        </div>
+        <div>
+            <div className="mb-2 block">
+            <Label htmlFor="updatepassword" value="Update your password"/>
             </div>
-                                    //TODO: figure out how to update password
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="updatepassword"
-            value="Update your password"
-            />
+            <TextInput id="updatepassword" onChange={handlePasswordChange} placeholder="********" type="text"/>
         </div>
-            <TextInput
-            id="updatepassword"
-            placeholder="********"
-            required
-            type="text"
-            />
-    </div>
-                                    //*FAVORITE GENRE
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="updategenre"
-            value="Update your favorite genre!"
-            />
+//*FAVORITE GENRE
+        <div>
+            <div className="mb-2 block">
+            <Label htmlFor="updategenre" value="Update your favorite genre!"/>
+            </div>
+            <TextInput id="updategenre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
         </div>
-            <TextInput
-            id="updategenre"
-            //TODO: have it be the infor from their profile
-            required
-            type="genre"
-            />
-    </div>
-                                    //*BIO
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="updatebio"
-            value="Update your bio" 
-//take out value to get rid of the label on the form
-            />
+//*BIO
+        <div>
+            <div className="mb-2 block">
+            <Label htmlFor="updatebio" value="Update your bio" />
+            {/* take out value to get rid of the label on the form */}
+            </div>
+            <Textarea id="updatebio" onChange={handleBioChange} placeholder={`${user.bio}`} rows={4}/>
         </div>
-            <Textarea
-            id="updatebio"
-            //TODO: have it be the infor from their profile
-            required
-            rows={4}
-            />
-    </div>
-        <Button type="submit">
-        Save
-        </Button>
+        <Button type="submit">Save</Button>
 </form>
     </div>
     </Modal.Body>
