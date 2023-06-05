@@ -1,15 +1,15 @@
-import react from 'react';
+import React from 'react';
 import { Button, Label, TextInput, Modal } from 'flowbite';
 
 
-export default function LogIn = () => {
+const LogIn = () => {
     return (
         <div>
         <Button onClick={onClick}>
         Sign Up
-      </Button>
+        </Button>
 
-        <Modal   onClose={onClose}
+        <Modal onClose={onClose}
         popup
         size="md">
         <Modal.Header />
@@ -26,11 +26,11 @@ export default function LogIn = () => {
             />
         </div>
             <TextInput
-            icon={fine-emailletter-icon}
+            icon={find-emailletter-icon}
             id="email1"
             placeholder="janedoe@email.com"
             required
-            icon={decide-where-we-want-icon}
+            iconRight={decide-where-we-want-icon}
             type="email"
             />
     </div>
@@ -69,6 +69,6 @@ export default function LogIn = () => {
 </Modal.Body>
 </Modal>
 </div>
-
     );
 }
+export default LogIn;
