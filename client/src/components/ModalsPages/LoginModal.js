@@ -1,12 +1,24 @@
 import React from 'react';
 import { Button, Label, TextInput, Modal } from 'flowbite';
+import { useHistory } from 'react-router-dom';
 
 
 const LogIn = () => {
+
+    const history = useHistory();
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log('LogIn Successful:');
+        // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
+        history.push('/feed'); 
+    }
+
+    
     return (
         <div>
         <Button onClick={onClick}>
-        Sign Up
+        LogIn
         </Button>
 
         <Modal onClose={onClose}
@@ -16,8 +28,9 @@ const LogIn = () => {
         <Modal.Body>
 <div className="space-y-6">
         <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-          Sign Up
+          LogIn
         </h3>
+        <form onSubmit={handleFormSubmit}>
     <div>
         <div className="mb-2 block">
             <Label
@@ -61,11 +74,12 @@ const LogIn = () => {
             required
             type="password"
             />
-    </div>
-</div>
+    </div>    
     <Button type="submit">
         LogIn
     </Button>
+    </form>
+</div>
 </Modal.Body>
 </Modal>
 </div>
