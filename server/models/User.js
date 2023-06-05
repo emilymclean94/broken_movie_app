@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const movieScema = require("./Movies");
+const movieScema = require("./Movie");
 const userSchema = new Schema(
   {
     firstname: { type: String, required: true },
