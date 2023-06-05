@@ -1,5 +1,5 @@
 import react from 'react';
-import { Button, Label, TextInput, Textarea,Modal } from 'flowbite';
+import { Button, Label, TextInput, Modal } from 'flowbite';
 
 
 export default function LogIn = () => {
