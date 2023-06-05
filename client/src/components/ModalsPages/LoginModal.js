@@ -1,23 +1,46 @@
 import React from 'react';
 import { Button, Label, TextInput, Modal } from 'flowbite';
+import { useHistory } from 'react-router-dom';
+import{ useState } from 'react';
 
 
 const LogIn = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const history = useHistory();
+
+    const handleModalOpen = () => {
+        setIsModalOpen(true);
+    };
+    
+    const handleModalClose = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log('LogIn Successful:');
+        // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
+        history.push('/feed'); 
+    }
+
+
     return (
         <div>
-        <Button onClick={onClick}>
-        Sign Up
+        <Button onClick={handleModalOpen}>
+        LogIn
         </Button>
 
-        <Modal onClose={onClose}
+        <Modal onClose={handleModalClose}
         popup
-        size="md">
+        size="md"
+        open={isModalOpen}>
         <Modal.Header />
         <Modal.Body>
 <div className="space-y-6">
         <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-          Sign Up
+          LogIn
         </h3>
+        <form onSubmit={handleFormSubmit}>
     <div>
         <div className="mb-2 block">
             <Label
@@ -61,11 +84,12 @@ const LogIn = () => {
             required
             type="password"
             />
-    </div>
-</div>
+    </div>    
     <Button type="submit">
         LogIn
     </Button>
+    </form>
+</div>
 </Modal.Body>
 </Modal>
 </div>
