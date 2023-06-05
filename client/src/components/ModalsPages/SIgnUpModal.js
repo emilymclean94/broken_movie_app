@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Label, TextInput, Textarea,Modal } from 'flowbite';
 
-export default function SignUp = () => {
+const SignUp = () => {
     return (
         <div>
         <Button onClick={onClick}>
@@ -116,3 +116,4 @@ export default function SignUp = () => {
 </div>
     );
 }
+export default SignUp;
