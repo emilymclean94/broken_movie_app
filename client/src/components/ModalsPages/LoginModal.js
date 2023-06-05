@@ -26,11 +26,11 @@ const LogIn = () => {
             />
         </div>
             <TextInput
-            icon={fine-emailletter-icon}
+            icon={find-emailletter-icon}
             id="email1"
             placeholder="janedoe@email.com"
             required
-            icon={decide-where-we-want-icon}
+            iconRight={decide-where-we-want-icon}
             type="email"
             />
     </div>
