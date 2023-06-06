@@ -89,7 +89,7 @@ const SignUp = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box sx={style}>
+<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
 <form onSubmit={handleFormSubmit} className="modal-box">
 <button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 <div> 
@@ -101,15 +101,15 @@ const SignUp = () => {
     </div>
 //*FIRST NAME
 
-        <TextField label="First Name" icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
+        <TextField sx={{ m: 1, width: '25ch' }} label="First Name" id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
  
 //*EMAIL 
 
-            <TextField label="Email" value={email} icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
+            <TextField sx={{ m: 1, width: '25ch' }} label="Email" value={email} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
 
 //*USERNAME
 
-        <TextField label="Username" value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
+        <TextField label="Username" sx={{ m: 1, width: '25ch' }} value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
 
 //*PASSWORD
 
@@ -137,13 +137,12 @@ const SignUp = () => {
     </FormControl>
 //*FAVORITE GENRE
 
-            <TextField label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
+            <TextField fulllWidth sx={{ m: 1}}label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
   
 //*BIO
-            <Textarea label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
+        <Textarea fullWidth sx={{ m: 1}} label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} />
     <div className="modal-action">
-      {/* if there is a button in form, it will close the modal */}
-      <button className="Submit">Sign Up</button>
+      <Button sx={{ m: 1, width: '25ch' }} className="Submit">Sign Up</Button>
     </div>
 </form>
   </Box>
