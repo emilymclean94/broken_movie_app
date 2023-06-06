@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Label, TextInput, Modal } from 'flowbite';
+import { Button, Label, TextField, Modal } from 'flowbite';
 import{ useState } from 'react';
 
 
@@ -24,43 +24,22 @@ const LogIn = () => {
 <form onSubmit={handleFormSubmit} className="modal-box">
 <button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="email1"
-            value="Your email"
-            />
-        </div>
-            <TextInput
+
+            <TextField label="Your email"
             id="email1"
-            placeholder="janedoe@email.com"
+            defaultValue="janedoe@email.com"
             required
             type="email"
             />
-    </div>
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="username1"
-            value="Username"
-            />
-        </div>
-            <TextInput
+            <TextField label="Username"
             id="username1"
-            placeholder="j@neDoe33"
+            defaultValue="j@neDoe33"
             required
             type="username"
             />
-    </div>
-    <div>
-        <div className="mb-2 block">
-            <Label
-            htmlFor="password1"
-            value="Password"
-            />
-        </div>
-            <TextInput
+            <TextField label="Password"
             id="password1"
-            placeholder="********"
+            defaultValue="********"
             required
             type="password"
             />

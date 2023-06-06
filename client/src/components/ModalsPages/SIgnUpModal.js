@@ -81,33 +81,28 @@ const SignUp = () => {
     />
     </div>
 //*FIRST NAME
-    <div className="mb-2 block"> 
-        <TextInput icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required iconRight={decide-where-we-want-icon} type="firstname" value={firstName}/>
-    </div>  
+
+        <TextField label="First Name" icon={fine-person-icon} id="firstname1" defaultValue="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
+ 
 //*EMAIL 
-        <div className="mb-2 block">
-            <TextInput value={email} icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
-        </div>
+
+            <TextField label="Email" value={email} icon={fine-emailletter-icon} id="email1" defaultValue="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
+
 //*USERNAME
-    <div className="mb-2 block">
-        <TextInput value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
-    </div>
+
+        <TextField label="Username" value={username} id="username1" defaultValue="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
+
 //*PASSWORD
 
-    <div className="mb-2 block">
-            <TextInput value={password} id="password1" placeholder="********" onChange={handlePasswordChange} required type="password"/>
-    </div>
+
+            <TextField label="Password" value={password} id="password1" defaultValue="********" onChange={handlePasswordChange} required type="password"/>
+
 //*FAVORITE GENRE
-    <div>
-        <div className="mb-2 block">
-            <Label htmlFor="genre1" value="Your favorite genre!"/>
-        </div>
-            <TextInput value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
-    </div>
+
+            <TextField label="Favorite movie genre?" value={genre} id="genre1" defaultValue="Horror" required onChange={handleGenreChange} type="genre" />
+  
 //*BIO
-    <div className="mb-2 block">
-            <Textarea className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
-    </div>
+            <Textarea label="Bio" className="textarea-sm" value={bio} id="bio" defaultValue="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
     <div className="modal-action">
       {/* if there is a button in form, it will close the modal */}
       <button className="Submit">Sign Up</button>
@@ -120,12 +115,3 @@ const SignUp = () => {
 }
 export default SignUp;
 
-
-
-
-
-const hold = () => {
-    return(
-<div>
-</div>);
-}

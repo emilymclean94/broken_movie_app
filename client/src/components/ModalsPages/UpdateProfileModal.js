@@ -88,49 +88,18 @@ const UpdateProfile = () => {
     />
     </div>
 //*FIRST NAME
-    <div> 
-        <div className="mb-2 block">
-        <Label htmlFor="name" value="Update your first name"/>
-        </div>
-        <TextInput value={firstName} icon={fine-emailletter-icon} id="name" placeholder={`${user.firstname}`} onChange={handleFirstNameChange} iconRight={decide-where-we-want-icon} type="text"/>
-    </div>
+        <TextField label="Update your first name" value={firstName} id="name" defaultValue={`${user.firstname}`} onChange={handleFirstNameChange}/>
 //*LAST NAME    
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="email" value="Update your email"/>
-            </div>
-            <TextInput value={email} icon={fine-emailletter-icon} id="email" placeholder={`${user.email}`} onChange={handleEmailChange} iconRight={decide-where-we-want-icon} type="email"/>
-        </div>
+            <TextField label="Update your email" value={email} id="email" defaultValue={`${user.email}`} onChange={handleEmailChange} type="email"/>
 //*EMAIL
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="username" value="Update your username"/>
-            </div>
-            <TextInput value={username} id="username" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
-        </div>
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="password" value="Update your password"/>
-            </div>
-            <TextInput value={password} id="password" onChange={handlePasswordChange} placeholder="********" type="text"/>
-        </div>
+            <TextField value="Update your username" value={username} id="username" defaultValue={`${user.username}`} onChange={handleUsernameChange} type="text"/>
+//*PASSWORD
+            <TextField label="Update your password" value={password} id="password" onChange={handlePasswordChange} defaultValue="********" type="text"/>
 //*FAVORITE GENRE
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="genre" value="Update your favorite genre!"/>
-            </div>
-            <TextInput value={genre} id="genre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
-        </div>
+            <TextField label="Update favorite genre" value={genre} id="genre" defaultValue={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
 //*BIO
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="bio" value="Update your bio" />
-            {/* take out value to get rid of the label on the form */}
-            </div>
-            <Textarea value={bio} id="bio" onChange={handleBioChange} placeholder={`${user.bio}`} rows={4}/>
-        </div>
+            <TextField label="Update your bio" value={bio} id="bio" onChange={handleBioChange} defaultValue={`${user.bio}`}/>
         <div className="modal-action">
-      {/* if there is a button in form, it will close the modal */}
       <button className="Submit">Save</button>
     </div>
 </form>
