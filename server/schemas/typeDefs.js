@@ -23,7 +23,7 @@ const typeDefs = gql`
     description: String
     rated: Boolean
     rating: String
-    createdAt: Date
+    createdAt: String
 }
 
 type movieInput {
@@ -35,7 +35,7 @@ type movieInput {
     description: String
     rated: Boolean
     rating: String
-    createdAt: Date
+    updatedAt: String
 }
 
 type Auth {
