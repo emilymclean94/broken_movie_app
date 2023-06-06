@@ -95,44 +95,44 @@ const UpdateProfile = () => {
 //*FIRST NAME
     <div> 
         <div className="mb-2 block">
-        <Label htmlFor="nameupdate" value="Update your first name"/>
+        <Label htmlFor="name" value="Update your first name"/>
         </div>
-        <TextInput icon={fine-emailletter-icon} id="nameupdate" placeholder={`${user.email}`} onChange={handleFirstNameChange} iconRight={decide-where-we-want-icon} type="text"/>
+        <TextInput value={firstName} icon={fine-emailletter-icon} id="name" placeholder={`${user.firstname}`} onChange={handleFirstNameChange} iconRight={decide-where-we-want-icon} type="text"/>
     </div>
 //*LAST NAME    
         <div>
             <div className="mb-2 block">
-            <Label htmlFor="emailupdate" value="Update your email"/>
+            <Label htmlFor="email" value="Update your email"/>
             </div>
-            <TextInput icon={fine-emailletter-icon} id="emailupdate" placeholder={`${user.email}`} onChange={handleEmailChange} iconRight={decide-where-we-want-icon} type="email"/>
+            <TextInput value={email} icon={fine-emailletter-icon} id="email" placeholder={`${user.email}`} onChange={handleEmailChange} iconRight={decide-where-we-want-icon} type="email"/>
         </div>
 //*EMAIL
         <div>
             <div className="mb-2 block">
-            <Label htmlFor="updateusername" value="Update your username"/>
+            <Label htmlFor="username" value="Update your username"/>
             </div>
-            <TextInput id="updateusername" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
+            <TextInput value={username} id="username" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
         </div>
         <div>
             <div className="mb-2 block">
-            <Label htmlFor="updatepassword" value="Update your password"/>
+            <Label htmlFor="password" value="Update your password"/>
             </div>
-            <TextInput id="updatepassword" onChange={handlePasswordChange} placeholder="********" type="text"/>
+            <TextInput value={password} id="password" onChange={handlePasswordChange} placeholder="********" type="text"/>
         </div>
 //*FAVORITE GENRE
         <div>
             <div className="mb-2 block">
-            <Label htmlFor="updategenre" value="Update your favorite genre!"/>
+            <Label htmlFor="genre" value="Update your favorite genre!"/>
             </div>
-            <TextInput id="updategenre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
+            <TextInput value={genre} id="genre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
         </div>
 //*BIO
         <div>
             <div className="mb-2 block">
-            <Label htmlFor="updatebio" value="Update your bio" />
+            <Label htmlFor="bio" value="Update your bio" />
             {/* take out value to get rid of the label on the form */}
             </div>
-            <Textarea id="updatebio" onChange={handleBioChange} placeholder={`${user.bio}`} rows={4}/>
+            <Textarea value={bio} id="bio" onChange={handleBioChange} placeholder={`${user.bio}`} rows={4}/>
         </div>
         <Button type="submit">Save</Button>
 </form>
