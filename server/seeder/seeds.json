@@ -110,6 +110,7 @@
     {
         "firstname": "Alexander",
         "username": "alex22",
-        "email": "alex@example.com"
+        "email": "alex@example.com",
+        "password": "yourmom"
     }
 ]
