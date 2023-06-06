@@ -1,30 +1,60 @@
-const { gql } = require('apollo-server-express');
+import { gql } from '@apollo/client';
 
-//! refactoring in progress
-
-const typeDefs = gql`
-  type User {
-    _id: ID!
-    name: String!
-  }
-
-  type Movie {
-    _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
-  }
-
-  type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
-  }
-
-  type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+        avatar
+      }
+    }
   }
 `;
 
-module.exports = typeDefs;
+export const ADD_USER = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        firstname
+        username
+        avatar
+        email
+        myList {
+          _id
+          posterImg
+          title
+          releaseDate
+          description
+          rated
+        }
+        watched {
+          _id
+          posterImg
+          title
+          releaseDate
+          description
+          rated
+          rating
+        }
+      }
+    }
+  }
+`;
+
+export const ADD_MOVIE = gql`
+  mutation addMovie($movieId: ID!) {
+    addMovie(movieId: $movieId) {
+      _id
+      posterImg
+      title
+      releaseDate
+      description
+      rated
+    }
+  }
+`;
+

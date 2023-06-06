@@ -1,46 +1,59 @@
 import { gql } from '@apollo/client';
 
-//! refactoring in progress
+//! if error add movieId to model instead of just typeDefs
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
+      firstname
       username
       email
-      thoughts {
+      avatar
+      friends
+      myList {
         _id
-        thoughtText
-        createdAt
+        posterImg
+        title
+        releaseDate
+        description
+        rated
+      }
+      watched {
+        _id
+        posterImg
+        title
+        releaseDate
+        description
+        rated
+        rating
       }
     }
   }
 `;
 
 export const QUERY_MOVIES = gql`
-  query getThoughts {
-    thoughts {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+  query getMovie {
+    movie {
+        _id
+        posterImg
+        title
+        releaseDate
+        description
+        rated
     }
   }
 `;
 
 export const QUERY_SINGLE_MOVIE = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
+  query getSingleMovie($movieId: ID!) {
+    movie(movieId: $movieId) {
         _id
-        commentText
-        commentAuthor
-        createdAt
-      }
+        posterImg
+        title
+        releaseDate
+        description
+        rated
     }
   }
 `;
