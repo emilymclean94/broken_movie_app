@@ -1,7 +1,17 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
 
 import AvatarSelection from './AvatarSelection';
-import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -25,6 +35,13 @@ const SignUp = () => {
     { id: 9, image: 'Avatar9.png' },
     // creates a 3x3 grid of avatars theoretically
     ];
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+    };
     const history = useHistory();
 
     const handleFirstNameChange = (event) => {
@@ -51,7 +68,9 @@ const SignUp = () => {
     const handleAvatarSelect = (avatarId) => {
     setSelectedAvatar(avatarId);
     };
-
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true); 
+    const handleClose = () => setOpen(false);
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('Sign Up Successful:', selectedAvatar);
@@ -82,27 +101,46 @@ const SignUp = () => {
     </div>
 //*FIRST NAME
 
-        <TextField label="First Name" icon={fine-person-icon} id="firstname1" defaultValue="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
+        <TextField label="First Name" icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
  
 //*EMAIL 
 
-            <TextField label="Email" value={email} icon={fine-emailletter-icon} id="email1" defaultValue="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
+            <TextField label="Email" value={email} icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
 
 //*USERNAME
 
-        <TextField label="Username" value={username} id="username1" defaultValue="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
+        <TextField label="Username" value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
 
 //*PASSWORD
 
 
-            <TextField label="Password" value={password} id="password1" defaultValue="********" onChange={handlePasswordChange} required type="password"/>
-
+            <FormControl required sx={{ m: 1, width: '25ch' }}onChange={handlePasswordChange} variant="outlined">
+            <InputLabel htmlFor="update-password">Password</InputLabel>
+            <OutlinedInput
+            id="update-password"
+            value={password}
+            type={showPassword ? 'text' : 'password'}
+            endAdornment={
+                <InputAdornment position="end">
+                <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+                </InputAdornment>
+            }
+            label="Password"
+            />
+    </FormControl>
 //*FAVORITE GENRE
 
-            <TextField label="Favorite movie genre?" value={genre} id="genre1" defaultValue="Horror" required onChange={handleGenreChange} type="genre" />
+            <TextField label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
   
 //*BIO
-            <Textarea label="Bio" className="textarea-sm" value={bio} id="bio" defaultValue="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
+            <Textarea label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
     <div className="modal-action">
       {/* if there is a button in form, it will close the modal */}
       <button className="Submit">Sign Up</button>
