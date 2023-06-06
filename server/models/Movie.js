@@ -9,6 +9,7 @@ const movieSchema = new Schema(
     rated: { type: Boolean, required: true },
     rating: { type: String },
     createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
   },
 );
 
