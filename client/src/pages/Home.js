@@ -1,16 +1,16 @@
 import React from "react";
 import Hero from "../components/HomePages/Hero";
-import Footer from "../components/NavBars/Footer";
-import HomeNavBar from "../components/NavBars/HomeNavBar";
-import Carousel from "../components/HomePages/Carousel";
+import HomeNav from "../components/NavBars/HomeNav";
 import Scroll1 from "../components/HomePages/Scroll1";
-import AboutUs from "../components/HomePages/AboutUs";
+import Carousel from "../components/HomePages/Carousel";
 import Scroll2 from "../components/HomePages/Scroll2";
+import AboutUs from "../components/HomePages/AboutUs";
+import Footer from "../components/NavBars/Footer";
 
 const Home = () => {
     return (
         <div>
-        <HomeNavBar />
+        <HomeNav />
         <Hero />
         <Scroll1 />
         <Carousel />
@@ -20,3 +20,5 @@ const Home = () => {
         </div>
     );
     }
+
+    export default Home;

@@ -1,12 +1,23 @@
-import logo from './logo.svg';
+import  React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import LogIn from '../src/components/ModalsPages/LoginModal';
+import Home from './pages/Home';
+import Feed from './pages/Feed';
+import FriendDashboard from './pages/FriendDashboard';
+import MyDashboard from './pages/MyDashboard';
 
 function App() {
   return (
-    <div className="">
-<LogIn/>
+    <Router>
+    <div className='App'>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/feed' element={<Feed />} />
+        <Route path='/yourdashboard' element={<FriendDashboard />} />
+        <Route path='/mydashboard' element={<MyDashboard />} />
+      </Routes>
     </div>
+  </Router>
   );
 }
 
