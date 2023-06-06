@@ -1,5 +1,7 @@
 const { gql } = require('apollo-server-express');
 
+//! Did not add star rating yet - need to add after testing
+
 const typeDefs = gql`
   # Define which fields are accessible from the model
 
@@ -43,23 +45,18 @@ type Auth {
 
   # Define which queries the front end is allowed to make and what data is returned
   
-  
   type Query {
     users: [User]
-    movies: [Movie]
+    user(username: String!): User
+    movie(movieId: ID!): Movie
+    movies(username: String!): [Movie]
   }
 
   type Mutation {
-    adduser (
-      firstname: String!
-      username: String
-      avatar: String
-      email: String
-    )
-    // remove user?
-    // login
-    // add movie (to watched)
-    // remove movie (from watched)
+    login(username: String!, password: String!): Auth
+    addUser(firstname: String!, username: String!, avatar: String!,email: String!): Auth
+    saveMovie(input: movieInput!): User
+    removeMovie(movieId: ID!): User
 }
 `;
 
