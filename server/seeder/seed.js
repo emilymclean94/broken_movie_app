@@ -1,0 +1,14 @@
+const db = require('../config/connection');
+const { User } = require('./seeds.json');
+
+db.once('open', async () => {
+    try {
+        await User.deleteMany({});
+        await User.create(seeds);
+        
+        console.log('seed successful');
+        process.exit(0);
+    } catch (err) {
+        throw err;
+    }
+});

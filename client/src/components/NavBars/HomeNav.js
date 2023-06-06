@@ -12,6 +12,7 @@ const HomeNav = () => {
                 </ul>
             </nav>
         </div>
+
     )
 }
 export default HomeNav;
