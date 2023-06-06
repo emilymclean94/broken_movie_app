@@ -1,7 +1,5 @@
 import { gql } from '@apollo/client';
 
-//! if error add movieId to model instead of just typeDefs
-
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
