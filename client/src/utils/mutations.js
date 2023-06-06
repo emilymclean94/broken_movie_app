@@ -8,7 +8,6 @@ export const LOGIN_USER = gql`
         _id
         email
         username
-        avatar
       }
     }
   }
@@ -22,7 +21,6 @@ export const ADD_USER = gql`
         _id
         firstname
         username
-        avatar
         email
       }
     }

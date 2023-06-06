@@ -9,7 +9,6 @@ export const QUERY_USER = gql`
       firstname
       username
       email
-      avatar
       friends
       myList {
         _id
