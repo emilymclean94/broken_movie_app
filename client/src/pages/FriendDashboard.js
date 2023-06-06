@@ -11,11 +11,11 @@ const FriendDashboard = () => {
     return (
     <div>
         <h1>Testing friends dashboard</h1>
-    <NavBar />
-    <FriendsProfile/>
-    <FriendsToWatch />
-    <FriendsWatchedList />
-    <Footer />
+        <NavBar />
+        <FriendsProfile/>
+        <FriendsToWatch />
+        <FriendsWatchedList />
+        <Footer />
     </div>
     );
     };
