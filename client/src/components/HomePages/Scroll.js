@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
-const Scroll = () => {
-    return (
-        <div>this will be the scroll animation</div>
-    )
-}
+// const Scroll = () => {
+//     return (
+//         <div>this will be the scroll animation</div>
+//     )
+// }
