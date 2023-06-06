@@ -23,37 +23,22 @@ export const ADD_USER = gql`
         username
         avatar
         email
-        myList {
-          _id
-          posterImg
-          title
-          releaseDate
-          description
-          rated
-        }
-        watched {
-          _id
-          posterImg
-          title
-          releaseDate
-          description
-          rated
-          rating
-        }
       }
     }
   }
 `;
 
 export const ADD_MOVIE = gql`
-  mutation addMovie($movieId: ID!) {
-    addMovie(movieId: $movieId) {
+  mutation addMovie($posterImg: String, $title: String, $releaseDate: String, $description: String, $rated: Boolean, $rating: String, $updatedAt: String) {
+    addMovie(posterImg: $posterImg, title: $title, releaseDate: $releaseDate, description: $description, rated: $rated, rating: $rating, updatedAt: $updatedAt) {
       _id
       posterImg
       title
       releaseDate
       description
       rated
+      rating
+      updatedAt
     }
   }
 `;
