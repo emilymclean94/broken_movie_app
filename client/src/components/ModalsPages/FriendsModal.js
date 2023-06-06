@@ -29,24 +29,32 @@ const FriendsModal = () => {
 
   return (
     <div>
-    <Button onClick={handleModalOpen}>Friends</Button>
-
-    <Modal onClose={handleModalClose} popup size="md" open={isModalOpen}>
-        <Modal.Header> My Friends</Modal.Header>
-        <Modal.Body>
+<Button onClick={handleOpen}>Open modal</Button>
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={style}>
+  <form>
             <ul className="space-y-4">
                 {friends.map((friend) => (
                 <li key={friend.id} className="flex items-center">
                     <img src={friend.avatar} alt={friend.username} className="w-10 h-10 rounded-full mr-4"/>
-                    <a href={`/profile/${friend.username}`} className="text-blue-500 hover:underline"> 
-                    {friend.username}
+                    <a href={`/profile/${friend.username}`} className="text-blue-500 hover:underline">{friend.username}
                     </a>
               </li>
             ))}
           </ul>
-        </Modal.Body>
-      </Modal>
+          <div className="modal-action">
+      {/* if there is a button in form, it will close the modal */}
+      <button className="btn">Close</button>
     </div>
+    </form>
+  </Box>
+</Modal>
+</div>
   );
 };
 

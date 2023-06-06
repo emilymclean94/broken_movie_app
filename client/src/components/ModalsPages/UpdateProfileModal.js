@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Label, TextInput, Modal, Textarea } from 'flowbite';
+
 
 import AvatarSelection from './AvatarSelection';
 
 const UpdateProfile = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const [selectedAvatar, setSelectedAvatar] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [username, setUsername] = useState('');
@@ -49,12 +49,6 @@ const UpdateProfile = () => {
     const handleAvatarSelect = (avatarId) => {
         setSelectedAvatar(avatarId);
     };
-    const handleModalOpen = () => {
-        setIsModalOpen(true);
-    };
-    const handleModalClose = () => {
-        setIsModalOpen(false);
-    };
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('Update Successful:');
@@ -74,16 +68,17 @@ const UpdateProfile = () => {
 
     return (
         <div>
-        <Button onClick={handleModalOpen}>
-        Update Profile
-        </Button>
-
-<Modal onClose={handleModalClose} popup size="md" open={isModalOpen}>
-<Modal.Header />
-<Modal.Body>
-<div className="space-y-6">
-    <h3 className="text-xl font-medium text-gray-900 dark:text-white">Update!</h3>
-<form onSubmit={handleFormSubmit}>
+<Button onClick={handleOpen}>Open modal</Button>
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={style}>
+<form onSubmit={handleFormSubmit} className="modal-box">
+    <h3>Update!</h3>
+<button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 //*AVATAR SELECTION     
     <div> //TODO check out how to show and update avatar
     <AvatarSelection
@@ -134,11 +129,13 @@ const UpdateProfile = () => {
             </div>
             <Textarea value={bio} id="bio" onChange={handleBioChange} placeholder={`${user.bio}`} rows={4}/>
         </div>
-        <Button type="submit">Save</Button>
-</form>
+        <div className="modal-action">
+      {/* if there is a button in form, it will close the modal */}
+      <button className="Submit">Save</button>
     </div>
-    </Modal.Body>
-    </Modal>
+</form>
+  </Box>
+</Modal>
 </div>
     )
 }

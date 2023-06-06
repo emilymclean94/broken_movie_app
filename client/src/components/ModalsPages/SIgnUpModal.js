@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Label, TextInput, Textarea, Modal } from 'flowbite';
+
 import AvatarSelection from './AvatarSelection';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 const SignUp = () => {
     const [selectedAvatar, setSelectedAvatar] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -49,15 +48,6 @@ const SignUp = () => {
     const handleBioChange = (event) => {
         setBio(event.target.value);
     };
-    
-    const handleModalOpen = () => {
-        setIsModalOpen(true);
-    };
-    
-    const handleModalClose = () => {
-        setIsModalOpen(false);
-    };
-
     const handleAvatarSelect = (avatarId) => {
     setSelectedAvatar(avatarId);
     };
@@ -73,56 +63,38 @@ const SignUp = () => {
 
     return (
         <div>
-        <Button onClick={handleModalOpen}>
-        Sign Up
-        </Button>
-
+<Button onClick={handleOpen}>Open modal</Button>
 <Modal
-onClose={handleModalClose}
-popup
-size="md"
-open={isModalOpen}>
-        <Modal.Header />
-        <Modal.Body>
-<div className="space-y-6">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">
-            Sign Up
-            </h3>
-        //*AVATAR SELECTION 
-    <div> 
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={style}>
+<form onSubmit={handleFormSubmit} className="modal-box">
+<button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+<div> 
     <AvatarSelection
         avatars={avatars}
         selectedAvatar={selectedAvatar}
         onAvatarSelect={handleAvatarSelect}
     />
     </div>
-<form onSubmit={handleFormSubmit}>
 //*FIRST NAME
-    <div> 
-        <div className="mb-2 block">
-        <Label htmlFor="firstname1" value="Your first name"/>
-        </div>
+    <div className="mb-2 block"> 
         <TextInput icon={fine-person-icon} id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required iconRight={decide-where-we-want-icon} type="firstname" value={firstName}/>
     </div>  
 //*EMAIL 
-        <div>
-            <div className="mb-2 block">
-            <Label htmlFor="email1" value="Your email"/>
-            </div>
+        <div className="mb-2 block">
             <TextInput value={email} icon={fine-emailletter-icon} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
         </div>
 //*USERNAME
-    <div>
-            <div className="mb-2 block">
-            <Label htmlFor="username1" value="Your username"/>
-            </div>
-            <TextInput value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
+    <div className="mb-2 block">
+        <TextInput value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
     </div>
 //*PASSWORD
-    <div>
-        <div className="mb-2 block">
-            <Label htmlFor="password1" value="Your password"/>
-        </div>
+
+    <div className="mb-2 block">
             <TextInput value={password} id="password1" placeholder="********" onChange={handlePasswordChange} required type="password"/>
     </div>
 //*FAVORITE GENRE
@@ -133,22 +105,27 @@ open={isModalOpen}>
             <TextInput value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
     </div>
 //*BIO
-    <div>
-        <div className="mb-2 block">
-            <Label htmlFor="bio" value="Your bio" />
-            {/* take out value to get rid of the label on the form */}
-        </div>
-            <Textarea value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
+    <div className="mb-2 block">
+            <Textarea className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} required rows={4}/>
     </div>
-        <Button type="submit">
-        Sign Up
-        </Button>
+    <div className="modal-action">
+      {/* if there is a button in form, it will close the modal */}
+      <button className="Submit">Sign Up</button>
+    </div>
 </form>
-    </div>
-    </Modal.Body>
-    </Modal>
+  </Box>
+</Modal>
 </div>
     );
 }
 export default SignUp;
 
+
+
+
+
+const hold = () => {
+    return(
+<div>
+</div>);
+}
