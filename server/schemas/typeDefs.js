@@ -56,7 +56,7 @@ type Auth {
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(firstname: String!, username: String!, avatar: String!,email: String!): Auth
-    addMovie(input: movieInput!): User
+   
     removeMovie(movieId: ID!): User
 }
 `;
