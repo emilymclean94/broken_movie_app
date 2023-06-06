@@ -6,6 +6,7 @@ const typeDefs = gql`
   # Define which fields are accessible from the model
 
   type User {
+    _id: ID
     firstname: String
     username: String
     avatar: String
@@ -16,7 +17,7 @@ const typeDefs = gql`
   }
 
   type Movie {
-    movieId: ID
+    _id: ID
     posterImg: String
     title: String
     releaseDate: String
@@ -26,9 +27,9 @@ const typeDefs = gql`
     createdAt: String
 }
 
+
 type movieInput {
-  movieId: String
-  movieId: ID
+    _id: ID
     posterImg: String
     title: String
     releaseDate: String
@@ -55,7 +56,7 @@ type Auth {
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(firstname: String!, username: String!, avatar: String!,email: String!): Auth
-    saveMovie(input: movieInput!): User
+   
     removeMovie(movieId: ID!): User
 }
 `;

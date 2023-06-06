@@ -6,8 +6,8 @@ const userSchema = new Schema(
   {
     firstname: { type: String, required: true },
     username: { type: String, required: true, unique: true },
-    password: { type: String, required: true, minlength: 8 },
-    avatar: { type: String, required: true }, 
+    password: { type: String, required: true, minlength: 5 },
+    avatar: { type: String }, 
     email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'], },
     // myList: [movieScema],
     // watched: [movieScema],
