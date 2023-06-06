@@ -9,8 +9,8 @@ const userSchema = new Schema(
     password: { type: String, required: true, minlength: 8 },
     avatar: { type: String, required: true }, 
     email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'], },
-    myList: [movieScema],
-    watched: [movieScema],
+    // myList: [movieScema],
+    // watched: [movieScema],
     friends: [
         {
           type: Schema.Types.ObjectId,
