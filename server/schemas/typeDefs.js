@@ -27,6 +27,7 @@ const typeDefs = gql`
     createdAt: String
 }
 
+
 type movieInput {
     _id: ID
     posterImg: String
