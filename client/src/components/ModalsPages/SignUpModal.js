@@ -13,7 +13,10 @@ import Avatar6 from '../Assets/AvatarImages/Avatar6.png';
 import Avatar7 from '../Assets/AvatarImages/Avatar7.png';
 import Avatar8 from '../Assets/AvatarImages/Avatar8.png';
 import Avatar9 from '../Assets/AvatarImages/Avatar9.png';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
 
+import Auth from '../../utils/auth';
 
 
 const style = {
@@ -89,12 +92,46 @@ const SignUp = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const handleFormSubmit = (event) => {
+    const [formState, setFormState] = useState({
+        username: '',
+        email: '',
+        password: '',
+        firstname: '',
+        genre: '',
+        bio: '',
+        avatar: ''
+      });
+      const [addUser, { error, data }] = useMutation(ADD_USER);
+    
+      const handleChange = (event) => {
+        const { firstName, username, email, password, bio, genre, avatar, value } = event.target;
+    
+        setFormState({
+          ...formState,
+          [firstName]: value,
+          [username]: value,
+          [email]: value,
+          [password]: value,
+          [bio]: value,
+          [genre]: value,
+          [avatar]: value,
+        });
+      };
+    
+      const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log('Sign Up Successful:', selectedAvatar);
-        selectedAvatar = null;
-        // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
-    }
+        console.log(formState);
+    
+        try {
+          const { data } = await addUser({
+            variables: { ...formState },
+          });
+    
+          Auth.login(data.addUser.token);
+        } catch (e) {
+          console.error(e);
+        }
+      };
 
     return (
         <div>
@@ -107,7 +144,7 @@ const SignUp = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <form onSubmit={handleFormSubmit} className="modal-box">
+                    <form onClick={handleFormSubmit} onChange={handleChange} className="modal-box">
                         <button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                         <div>
                             <AvatarSelection
@@ -144,7 +181,7 @@ const SignUp = () => {
                         <TextField sx={{ m: 1, width: '30ch' }} label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
                         <TextField fullWidth sx={{ m: 1 }} label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} />
                         <div className="modal-action">
-                            <Button sx={{ m: 1, width: '25ch' }} className="Submit">Sign Up</Button>
+                            <Button sx={{ m: 1, width: '25ch' }}  className="Submit">Sign Up</Button>
                         </div>
                     </form>
                 </Box>

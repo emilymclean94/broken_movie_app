@@ -11,6 +11,8 @@ const typeDefs = gql`
     username: String
     avatar: String
     email: String
+    genre: String
+    bio: String
     myList:[Movie]
     watched: [Movie]
     friends: [User]
