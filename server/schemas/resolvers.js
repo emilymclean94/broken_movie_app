@@ -11,7 +11,7 @@ const resolvers = {
           return await User.find() ;
           },
           user: async (parent, { username }) => {
-            return User.findOne({ username }).populate('watched');
+            return User.findOne({ username });
           },
           movies: async (parent, {  }) => {
             const params = username ? { username } : {};
@@ -20,6 +20,12 @@ const resolvers = {
           movie: async (parent, { movieId }) => {
             return Movie.findOne({ _id: movieId });
           },
+          // me: async (parent, args, context) => {
+          //   if (context.user) {
+          //     return User.findOne({ _id: context.user._id }).populate('watched');
+          //   }
+          //   throw new AuthenticationError('You need to be logged in!');
+          // },
         
     },
     Mutation: {

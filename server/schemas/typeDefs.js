@@ -22,7 +22,6 @@ const typeDefs = gql`
     title: String
     releaseDate: String
     description: String
-    rated: Boolean
     rating: String
     createdAt: String
 }
@@ -34,7 +33,6 @@ type movieInput {
     title: String
     releaseDate: String
     description: String
-    rated: Boolean
     rating: String
     updatedAt: String
 }
