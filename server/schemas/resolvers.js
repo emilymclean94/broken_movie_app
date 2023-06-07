@@ -13,12 +13,12 @@ const resolvers = {
           user: async (parent, { username }) => {
             return User.findOne({ username });
           },
-          movies: async (parent, {  }) => {
+          movies: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Movie.find({});
           },
-          movie: async (parent, { movieId }) => {
-            return Movie.findOne({ _id: movieId });
+          movie: async (parent) => {
+            return Movie.find();
           },
           // me: async (parent, args, context) => {
           //   if (context.user) {
@@ -51,16 +51,16 @@ const resolvers = {
     
           return { token, user };
         },
-        // addMovie: async (parent, { thoughtText, thoughtAuthor }) => {
-        //   const thought = await Thought.create({ thoughtText, thoughtAuthor });
+        addMovie: async (parent, { username }) => {
+          const movie = await Movie.create({ posterImg, title, releaseDate, description, rating, updatedAt });
     
-        //   await User.findOneAndUpdate(
-        //     { username: thoughtAuthor },
-        //     { $addToSet: { thoughts: thought._id } }
-        //   );
+          await User.findOneAndUpdate(
+            { username },
+            { $addToSet: { watched: movieId } }
+          );
     
-        //   return thought;
-        // },
+          return thought;
+        },
         removeMovie: async (parent, { movieId }) => {
           return Movie.findOneAndDelete({ _id: movieId });
         },

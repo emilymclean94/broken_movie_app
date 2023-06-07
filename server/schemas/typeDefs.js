@@ -47,13 +47,14 @@ type Auth {
   type Query {
     users: [User]
     user(username: String!): User
-    movie(movieId: ID!): Movie
+    movie: [Movie]
     movies(username: String!): [Movie]
   }
 
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(firstname: String!, username: String!,email: String!, password: String!): Auth
+    addMovie(username: String!): User
     removeMovie(movieId: ID!): User
 }
 `;
