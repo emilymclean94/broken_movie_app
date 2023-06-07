@@ -13,7 +13,8 @@ We wanted to creat an app that allows the user to access movies, rate them, and 
 * [Questions](#questions)
 
 ## Installation
-none
+
+npm install to download a bunch of amazing packages! Some of the pacakges included, but not limited to: mongoose, graphQL, apollo server, material UI.
 
 ## Usage
 
