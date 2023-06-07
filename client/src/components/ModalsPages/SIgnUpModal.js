@@ -82,7 +82,7 @@ const SignUp = () => {
 
     return (
         <div>
-<Button onClick={handleOpen}>Open modal</Button>
+<Button onClick={handleOpen} css={{color:'#00000'}} >Open modal</Button>
 <Modal
   open={open}
   onClose={handleClose}
@@ -99,21 +99,10 @@ const SignUp = () => {
         onAvatarSelect={handleAvatarSelect}
     />
     </div>
-//*FIRST NAME
 
-        <TextField sx={{ m: 1, width: '25ch' }} label="First Name" id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/>
- 
-//*EMAIL 
-
+        <TextField sx={{ m: 1, width: '25ch' }} label="First Name" id="firstname1" placeholder="JaneDoe" onChange={handleFirstNameChange} required type="firstname" value={firstName}/> 
             <TextField sx={{ m: 1, width: '25ch' }} label="Email" value={email} id="email1" placeholder="janedoe@email.com" onChange={handleEmailChange} required type="email"/>
-
-//*USERNAME
-
         <TextField label="Username" sx={{ m: 1, width: '25ch' }} value={username} id="username1" placeholder="j@neDoe33" onChange={handleUsernameChange} required type="username"/>
-
-//*PASSWORD
-
-
             <FormControl required sx={{ m: 1, width: '25ch' }}onChange={handlePasswordChange} variant="outlined">
             <InputLabel htmlFor="update-password">Password</InputLabel>
             <OutlinedInput
@@ -135,11 +124,7 @@ const SignUp = () => {
             label="Password"
             />
     </FormControl>
-//*FAVORITE GENRE
-
-            <TextField fulllWidth sx={{ m: 1}}label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
-  
-//*BIO
+            <TextField sx={{ m: 1, width: '30ch'}}label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
         <TextField fullWidth sx={{ m: 1}} label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} />
     <div className="modal-action">
       <Button sx={{ m: 1, width: '25ch' }} className="Submit">Sign Up</Button>
