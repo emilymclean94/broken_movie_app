@@ -39,26 +39,30 @@ const LogIn = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box >
+<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
 <form onSubmit={handleFormSubmit} className="modal-box">
-<button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+<Button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
     <div>
 
             <TextField label="Your email"
+            sx={{ m: 1, width: '25ch' }}
             id="email1"
             placeholder="janedoe@email.com"
             required
             type="email"
             />
             <TextField label="Username"
+            sx={{ m: 1, width: '25ch' }}
             id="username1"
             placeholder="j@neDoe33"
+            sx={{ m: 1, width: '25ch' }}
             required
             type="username"
             />
      <FormControl required sx={{ m: 1, width: '25ch' }} variant="outlined">
             <InputLabel htmlFor="update-password">Password</InputLabel>
             <OutlinedInput
+            sx={{ m: 1, width: '25ch' }}
             id="update-password"
             type={showPassword ? 'text' : 'password'}
             endAdornment={
@@ -78,8 +82,7 @@ const LogIn = () => {
     </FormControl>
     </div>    
     <div className="modal-action">
-      {/* if there is a button in form, it will close the modal */}
-      <button className="Submit">LogIn</button>
+      <Button sx={{ m: 1, width: '25ch' }} className="Submit">LogIn</Button>
     </div>
 </form>
   </Box>

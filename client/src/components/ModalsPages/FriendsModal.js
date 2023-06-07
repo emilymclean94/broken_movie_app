@@ -36,7 +36,7 @@ const FriendsModal = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box sx={style}>
+<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
   <form>
             <ul className="space-y-4">
                 {friends.map((friend) => (

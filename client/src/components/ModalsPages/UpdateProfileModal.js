@@ -89,7 +89,7 @@ const UpdateProfile = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box >
+<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
 <form onSubmit={handleFormSubmit} className="modal-box">
     <h3>Update!</h3>
 <button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -102,11 +102,11 @@ const UpdateProfile = () => {
     />
     </div>
 //*FIRST NAME
-        <TextField label="Update your first name" value={firstName} id="name" placeholder={`${user.firstname}`} onChange={handleFirstNameChange}/>
+        <TextField label="Update your first name" sx={{ m: 1, width: '25ch' }} value={firstName} id="name" placeholder={`${user.firstname}`} onChange={handleFirstNameChange}/>
 //*LAST NAME    
-            <TextField label="Update your email" value={email} id="email" placeholder={`${user.email}`} onChange={handleEmailChange} type="email"/>
+            <TextField label="Update your email" sx={{ m: 1, width: '25ch' }}value={email} id="email" placeholder={`${user.email}`} onChange={handleEmailChange} type="email"/>
 //*EMAIL
-            <TextField value="Update your username" value={username} id="username" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
+            <TextField value="Update your username" sx={{ m: 1, width: '25ch' }}value={username} id="username" placeholder={`${user.username}`} onChange={handleUsernameChange} type="text"/>
             
 //*PASSWORD
             {/* <TextField label="Update your password" value={password} id="password" onChange={handlePasswordChange} placeholder="********" type="text"/> */}
@@ -134,11 +134,11 @@ const UpdateProfile = () => {
     </FormControl>
             
 //*FAVORITE GENRE
-            <TextField label="Update favorite genre" value={genre} id="genre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
+            <TextField fullWidth sx={{ m: 1 }}label="Update favorite genre" value={genre} id="genre" placeholder={`${user.genre}`} onChange={handleGenreChange} type="genre"/>
 //*BIO
-            <TextField label="Update your bio" value={bio} id="bio" onChange={handleBioChange} placeholder={`${user.bio}`}/>
+            <TextField label="Update your bio" fullWidth sx={{ m: 1}}value={bio} id="bio" onChange={handleBioChange} placeholder={`${user.bio}`}/>
         <div className="modal-action">
-      <button className="Submit">Save</button>
+        <Button sx={{ m: 1, width: '25ch' }} className="Submit">Save</Button>
     </div>
 </form>
   </Box>
