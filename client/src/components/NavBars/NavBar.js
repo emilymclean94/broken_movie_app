@@ -13,6 +13,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Home', 'Feed', 'My Dashboard', 'Friends', 'Logout'];
 
+
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
