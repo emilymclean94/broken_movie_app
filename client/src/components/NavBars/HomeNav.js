@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar, Typography, Container, } from "@mui/material";
+import { AppBar, spacing, Toolbar, Typography, Container, } from "@mui/material";
 import styled from '@emotion/styled';
 import head from '../Assets/images/head.png';
 
@@ -16,7 +16,7 @@ const Icon = styled.img`
 
 function HomeNav() {
   return (
-    <AppBar style={{ background: 'black' }}position="static">
+    <AppBar style={{ background: 'black' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Icon src={head} alt="icon" />
@@ -37,17 +37,17 @@ function HomeNav() {
             STREAMVERSE
           </Typography>
             <Typography >
-  <HomeItem sx={{fontFamily: 'Chakra Petch, sans-serif',
+  <HomeItem sx={{textAlign: 'right', fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',p: 3,
-            display: { xs: 'none', md: 'flex'}}}
-              >SIGN UP</HomeItem>            
-            </Typography>
-            <Typography>
-  <HomeItem xs={{display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
+            display: { xs: 'none'}}}
+              >SIGN UP</HomeItem> 
+              </Typography>
+              <Typography >       
+  <HomeItem edge="end" xs={{textAlign: 'right', display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',}}>LOG IN</HomeItem>
-</Typography>
+              </Typography>
         </Toolbar>
       </Container>
     </AppBar>

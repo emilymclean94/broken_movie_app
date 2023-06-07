@@ -1,0 +1,9 @@
+.fade {
+    height: 50vh;
+    width: 100%;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    color: blue;
+    font-size: large;
+    font-weight: 200;
+}

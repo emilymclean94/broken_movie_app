@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Feed from './pages/Feed';
 import FriendDashboard from './pages/FriendDashboard';
 import MyDashboard from './pages/MyDashboard';
-import MovieAPI from './components/Movies/MovieAPI';
+// import MovieAPI from './components/Movies/MovieAPI';
 import Login from '../src/components/ModalsPages/LoginModal';
 import Signup from './components/ModalsPages/SignUpModal';
 import {createTheme, colors, ThemeProvider} from '@mui/material';
@@ -59,7 +59,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/yourdashboard" element={<FriendDashboard />} />
         <Route path="/mydashboard" element={<MyDashboard />} />
-        <Route path="/movieapi" element={<MovieAPI />} />
+        {/* <Route path="/movieapi" element={<MovieAPI />} /> */}
       </Routes>
     </div>
   </Router>

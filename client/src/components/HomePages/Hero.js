@@ -1,10 +1,6 @@
 import React from 'react';
-// import cool from '../Assets/images/cool.gif';
-// import purple from '../Assets/images/purple.gif';
 import styled from '@emotion/styled'
-import { Grid } from '@mui/material'
-import loading from '../Assets/images/loading.gif';
-// import simple from '../Assets/images/Simple.gif';
+import { Grid } from '@mui/material';
 import blue from '../Assets/images/blue.gif';
 
 
@@ -40,16 +36,15 @@ const Hero = () => {
     return (
 <Container >
 <Grid container rowSpacing ={2} columnSpacing={10}>
-        <Grid item container xs={6}>
+    <Grid item container xs={6}>
     <IMG src={blue} className="col" alt="cool" />
     </Grid>
     <Grid row item xs={1} sm={3}>
     <SubTitle >INTO THE</SubTitle>
     <Title >STREAMVERSE</Title>
     </Grid>
-    <img src={loading}  alt="loading" />
     </Grid>
-        </Container>
+</Container>
     );
 }
 export default Hero;
