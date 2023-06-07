@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Feed from './pages/Feed';
 import FriendDashboard from './pages/FriendDashboard';
 import MyDashboard from './pages/MyDashboard';
+import Login from '../src/components/ModalsPages/LoginModal';
+import Signup from './components/ModalsPages/SignUpModal';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         <Route path='/feed' element={<Feed />} />
         <Route path='/yourdashboard' element={<FriendDashboard />} />
         <Route path='/mydashboard' element={<MyDashboard />} />
