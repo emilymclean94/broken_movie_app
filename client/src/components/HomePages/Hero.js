@@ -2,7 +2,7 @@ import React from 'react';
 import cool from '../Assets/images/cool.gif';
 import styled from '@emotion/styled'
 import { Grid } from '@mui/material'
-// import loading from '../Assets/images/loading.gif';
+import loading from '../Assets/images/loading.gif';
 
 const IMG = styled.img`
  height: 80vh;
@@ -43,7 +43,7 @@ const Hero = () => {
     <SubTitle >INTO THE</SubTitle>
     <Title >STREAMVERSE</Title>
     </Grid>
-    {/* <img src={loading}  alt="loading" /> */}
+    <img src={loading}  alt="loading" />
     </Grid>
         </Container>
     );
