@@ -38,20 +38,20 @@ function HomeNav() {
           </Typography>
             <Typography >
 
-            <SignUp />
-            <LogIn />
+            
+            
 
   <HomeItem sx={{fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',p: 3,
             display: { xs: 'none', md: 'flex'}}}
-              >pending</HomeItem>            
+              ><SignUp /></HomeItem>            
 
             </Typography>
             <Typography>
   <HomeItem xs={{display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
-              color: 'white',}}>pending</HomeItem>
+              color: 'white',}}><LogIn /></HomeItem>
 </Typography>
         </Toolbar>
       </Container>
