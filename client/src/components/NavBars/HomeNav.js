@@ -2,8 +2,8 @@ import * as React from 'react';
 import { AppBar, Toolbar, Typography, Container, } from "@mui/material";
 import styled from '@emotion/styled';
 import head from '../Assets/images/head.png';
-
-
+import LogIn from '../ModalsPages/LoginModal'
+import SignUp from '../ModalsPages/SignUpModal'
 const HomeItem = styled.div`
     color: white;
     justify-content: space-between;
@@ -37,16 +37,21 @@ function HomeNav() {
             STREAMVERSE
           </Typography>
             <Typography >
+
+            <SignUp />
+            <LogIn />
+
   <HomeItem sx={{fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',p: 3,
             display: { xs: 'none', md: 'flex'}}}
-              >SIGN UP</HomeItem>            
+              >pending</HomeItem>            
+
             </Typography>
             <Typography>
   <HomeItem xs={{display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
-              color: 'white',}}>LOG IN</HomeItem>
+              color: 'white',}}>pending</HomeItem>
 </Typography>
         </Toolbar>
       </Container>
