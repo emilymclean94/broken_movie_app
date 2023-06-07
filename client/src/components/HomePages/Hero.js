@@ -7,6 +7,7 @@ import loading from '../Assets/images/loading.gif';
 // import simple from '../Assets/images/Simple.gif';
 import blue from '../Assets/images/blue.gif';
 
+
 const IMG = styled.img`
  height: 80vh;
  padding: 0 0 0 3em;
