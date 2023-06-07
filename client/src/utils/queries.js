@@ -29,6 +29,35 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_ME = gql`
+query user($username: String!) {
+  user(username: $username) {
+    _id
+    firstname
+    username
+    email
+    friends
+    myList {
+      _id
+      posterImg
+      title
+      releaseDate
+      description
+      rated
+    }
+    watched {
+      _id
+      posterImg
+      title
+      releaseDate
+      description
+      rated
+      rating
+    }
+  }
+}
+`;
+
 export const QUERY_MOVIES = gql`
   query getMovie {
     movie {
