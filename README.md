@@ -21,3 +21,25 @@ npm install to download a bunch of amazing packages! Some of the pacakges includ
 A link to our Heroku app is provided here: [Heroku]() (to be filled in later)
 
 ![Screenshot]() (to be filled in later)
+
+## Contributing
+Thanks to this amazing group for making this app posible!
+
+[Ashley](https://github.com/Ashleyg5),
+[Emily](https://github.com/emilymclean94),
+[Ethan](https://github.com/EGARRISXN),
+[Keely](https://github.com/keelyybug),
+[Sami](https://github.com/sweetkloid)
+
+## Tests
+none
+
+## License
+none
+
+## Questions
+If you have anyquestions don't hesitate to contact us with the information listed below.
+
+You can find our GitHub here: [GitHub](https://github.com/emilymclean94/stream_verse)
+
+You can email us here: 
