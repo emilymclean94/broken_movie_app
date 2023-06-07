@@ -11,3 +11,13 @@ We wanted to creat an app that allows the user to access movies, rate them, and 
 * [Instructions](#instructions)
 * [License](#license)
 * [Questions](#questions)
+
+## Installation
+
+npm install to download a bunch of amazing packages! Some of the pacakges included, but not limited to: mongoose, graphQL, apollo server, material UI.
+
+## Usage
+
+A link to our Heroku app is provided here: [Heroku]() (to be filled in later)
+
+![Screenshot]() (to be filled in later)
