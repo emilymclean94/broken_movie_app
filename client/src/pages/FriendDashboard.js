@@ -9,15 +9,20 @@ import Footer from '../components/NavBars/Footer';
 
 const FriendDashboard = () => {
     return (
-    <div>
-        <h1>Testing friends dashboard</h1>
-        <NavBar />
-        <FriendsProfile/>
-        <FriendsToWatch />
-        <FriendsWatchedList />
-        <Footer />
-    </div>
+        <div>
+            <NavBar />
+
+            <div>
+                <h1>Testing friends dashboard</h1>
+            </div>
+            
+
+            <FriendsProfile />
+            <FriendsToWatch />
+            <FriendsWatchedList />
+            <Footer />
+        </div>
     );
-    };
-    
-    export default FriendDashboard;
+};
+
+export default FriendDashboard;
