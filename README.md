@@ -17,22 +17,27 @@ none
 
 ## Usage
 
-A link to the webpage is provided here: [Webpage](https://github.com/sweetkloid/readme-generator)
+A link to our Heroku app is provided here: [Heroku]()
 
-![Screenshot](images/test2.png)
+![Screenshot]()
 
 ## Contributing
-none
+Thanks to this amazing group for making this app posible!
 
+[Ashley](https://github.com/Ashleyg5),
+[Emily](https://github.com/emilymclean94),
+[Ethan](https://github.com/EGARRISXN),
+[Keely](https://github.com/keelyybug),
+[Sami](https://github.com/sweetkloid)
 ## Tests
 none
 
 ## License
-This project is licensed under the MIT license. Click [here](https://opensource.org/licenses/MIT) for more information.
+none
 
 ## Questions
 If you have anyquestions don't hesitate to contact us with the information listed below.
 
-You can find our GitHub here: [GitHub](https://github.com/sweetkloid/readme-generator)
+You can find our GitHub here: [GitHub](https://github.com/emilymclean94/stream_verse)
 
-You can email us here: coolstrawberries@gmail.com
+You can email us here: 
