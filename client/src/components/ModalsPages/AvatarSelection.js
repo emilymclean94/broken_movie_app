@@ -1,24 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button, Menu, MenuItem,Avatar } from '@mui/material';
+import './Avatar.css';
+import { StyledEngineProvider } from '@mui/material/styles';
+
 
 const AvatarSelection = ({ avatars, selectedAvatar, onAvatarSelect }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+
+  const handleAvatarSelection = (avatarId) => {
+    onAvatarSelect(avatarId);
+    handleCloseMenu();
+  };
+
   return (
-    <div className="grid grid-cols-3 gap-3">
-      {avatars.map((avatar) => (
-        <div
-          key={avatar.id}
-          className={`p-2 rounded-full ${
-            selectedAvatar === avatar.id ? 'bg-blue-500' : 'bg-gray-200' //if it is selected it is blue if it is not it is grey may take out
-          }`}
-          onClick={() => onAvatarSelect(avatar.id)}
-        >
-          <img
-            src={avatar.image}
-            alt={`Avatar ${avatar.id}`}
-            className="h-12 w-12 rounded-full"
-          />
-        </div>
-      ))}
-    </div>
+    <StyledEngineProvider injectFirst>
+      <Button aria-controls="avatar-menu" aria-haspopup="true" onClick={handleOpenMenu}>
+        Select Avatar
+      </Button>
+      <Menu id="avatar-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
+        {avatars.map((avatar) => (
+          <MenuItem
+            key={avatar.id}
+            onClick={() => handleAvatarSelection(avatar.id)}
+            selected={selectedAvatar === avatar.id}
+            className="avatar-menu-item"
+          >
+            <div
+              className={`p-2 rounded-full ${
+                selectedAvatar === avatar.id ? 'bg-blue-500' : 'bg-gray-200'
+              }`}
+            >
+              <img src={avatar.image} alt={`Avatar ${avatar.id}`} sx={{height: 10, width:10,}}className="h-12 w-12 rounded-full" />
+            </div>
+          </MenuItem>
+        ))}
+      </Menu>
+      <Avatar  sx={{ width: 200, height: 200 }}>
+        {selectedAvatar && (
+          <img src={avatars.find((avatar) => avatar.id === selectedAvatar)?.image} alt="Selected" />
+        )}
+      </Avatar>
+      </StyledEngineProvider>
   );
 };
 

@@ -1,18 +1,20 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
-
+import {Box, IconButton, OutlinedInput, InputLabel, InputAdornment, FormControl, TextField, Modal, Button} from '@mui/material';
+import { VisibilityOff } from '@mui/icons-material';
+import { Visibility } from '@mui/icons-material';
 import AvatarSelection from './AvatarSelection';
 import { useState } from 'react';
+import Avatar1 from '../Assets/AvatarImages/Avatar1.png';
+import Avatar2 from '../Assets/AvatarImages/Avatar2.png';
+import Avatar3 from '../Assets/AvatarImages/Avatar3.png';
+import Avatar4 from '../Assets/AvatarImages/Avatar4.png';
+import Avatar5 from '../Assets/AvatarImages/Avatar5.png';
+import Avatar6 from '../Assets/AvatarImages/Avatar6.png';
+import Avatar7 from '../Assets/AvatarImages/Avatar7.png';
+import Avatar8 from '../Assets/AvatarImages/Avatar8.png';
+import Avatar9 from '../Assets/AvatarImages/Avatar9.png';
+
+
 
 
 const SignUp = () => {
@@ -24,15 +26,15 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [genre, setGenre] = useState('');
     const avatars = [
-    { id: 1, image: 'Avatar1.png' },
-    { id: 2, image: 'Avatar2.png' },
-    { id: 3, image: 'Avatar3.png' },
-    { id: 4, image: 'Avatar4.png' },
-    { id: 5, image: 'Avatar5.png' },
-    { id: 6, image: 'Avatar6.png' },
-    { id: 7, image: 'Avatar7.png' },
-    { id: 8, image: 'Avatar8.png' },
-    { id: 9, image: 'Avatar9.png' },
+    { id: 1, image: Avatar1 },
+    { id: 2, image: Avatar2 },
+    { id: 3, image: Avatar3 },
+    { id: 4, image: Avatar4 },
+    { id: 5, image: Avatar5 },
+    { id: 6, image: Avatar6 },
+    { id: 7, image: Avatar7 },
+    { id: 8, image: Avatar8 },
+    { id: 9, image: Avatar9 },
     // creates a 3x3 grid of avatars theoretically
     ];
     const [showPassword, setShowPassword] = React.useState(false);
@@ -42,7 +44,6 @@ const SignUp = () => {
     const handleMouseDownPassword = (event) => {
     event.preventDefault();
     };
-
 
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
