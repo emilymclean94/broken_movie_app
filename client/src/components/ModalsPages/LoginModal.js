@@ -10,7 +10,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const LogIn = () => {
     const handleFormSubmit = (event) => {
@@ -55,7 +55,6 @@ const LogIn = () => {
             sx={{ m: 1, width: '25ch' }}
             id="username1"
             placeholder="j@neDoe33"
-            sx={{ m: 1, width: '25ch' }}
             required
             type="username"
             />
