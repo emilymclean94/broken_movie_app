@@ -37,12 +37,14 @@ const theme= createTheme({
   width: 300,
   margin: 'auto'
 },
+  },
 Media: {
   height: 550,
   width: '100%'
-}}
-
-
+},
+Typography:{
+  fontFamily: 'Bebas Neue, sans-serif',
+},
 });
 function App() {
   return (

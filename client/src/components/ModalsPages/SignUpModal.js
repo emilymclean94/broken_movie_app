@@ -90,7 +90,7 @@ const SignUp = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+<Box sx={{ display: 'flex', flexWrap: 'wrap', mx: 'auto', width:200 }}>
 <form onSubmit={handleFormSubmit} className="modal-box">
 <button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 <div> 

@@ -33,19 +33,13 @@ const AvatarSelection = ({ avatars, selectedAvatar, onAvatarSelect }) => {
             selected={selectedAvatar === avatar.id}
             className="avatar-menu-item"
           >
-            <div
-              className={`p-2 rounded-full ${
-                selectedAvatar === avatar.id ? 'bg-blue-500' : 'bg-gray-200'
-              }`}
-            >
-              <img src={avatar.image} alt={`Avatar ${avatar.id}`} sx={{height: 10, width:10,}}className="h-12 w-12 rounded-full" />
-            </div>
+              <img src={avatar.image} alt={`Avatar ${avatar.id}`} className='avatar-picture' sx={{height: 50, width:50,}}/>
           </MenuItem>
         ))}
       </Menu>
       <Avatar  sx={{ width: 200, height: 200 }}>
         {selectedAvatar && (
-          <img src={avatars.find((avatar) => avatar.id === selectedAvatar)?.image} alt="Selected" />
+          <img src={avatars.find((avatar) => avatar.id === selectedAvatar)?.image} className='selected-avatar'alt="Selected" />
         )}
       </Avatar>
       </StyledEngineProvider>

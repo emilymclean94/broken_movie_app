@@ -28,19 +28,26 @@ function HomeNav() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontFamily: 'Chakra Petch, sans-serif',
+              fontWeight: 200,
               color: 'white',
               textDecoration: 'none',
             }}
           >
-            StreamVerse
+            STREAMVERSE
           </Typography>
             <Typography >
-<HomeItem>Sign Up</HomeItem>
-<HomeItem>Log In</HomeItem>
+  <HomeItem sx={{fontFamily: 'Chakra Petch, sans-serif',
+              fontWeight: 200,
+              color: 'white',p: 3,
+            display: { xs: 'none', md: 'flex'}}}
+              >SIGN UP</HomeItem>            
             </Typography>
+            <Typography>
+  <HomeItem xs={{display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
+              fontWeight: 200,
+              color: 'white',}}>LOG IN</HomeItem>
+</Typography>
         </Toolbar>
       </Container>
     </AppBar>
