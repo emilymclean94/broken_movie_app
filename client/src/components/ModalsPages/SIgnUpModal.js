@@ -42,7 +42,7 @@ const SignUp = () => {
     const handleMouseDownPassword = (event) => {
     event.preventDefault();
     };
-    const history = useHistory();
+
 
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value);
@@ -68,16 +68,16 @@ const SignUp = () => {
     const handleAvatarSelect = (avatarId) => {
     setSelectedAvatar(avatarId);
     };
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true); 
     const handleClose = () => setOpen(false);
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log('Sign Up Successful:', selectedAvatar);
         selectedAvatar = null;
         // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
-        history.push('/feed'); 
-        handleModalClose();
     }
 
     return (
@@ -140,7 +140,7 @@ const SignUp = () => {
             <TextField fulllWidth sx={{ m: 1}}label="Favorite movie genre?" value={genre} id="genre1" placeholder="Horror" required onChange={handleGenreChange} type="genre" />
   
 //*BIO
-        <Textarea fullWidth sx={{ m: 1}} label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} />
+        <TextField fullWidth sx={{ m: 1}} label="Bio" className="textarea-sm" value={bio} id="bio" placeholder="Tell us a little about yourself!" onChange={handleBioChange} />
     <div className="modal-action">
       <Button sx={{ m: 1, width: '25ch' }} className="Submit">Sign Up</Button>
     </div>
