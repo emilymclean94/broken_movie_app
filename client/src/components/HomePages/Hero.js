@@ -17,7 +17,7 @@ background-color: #000000;
 `
 
 const Title = styled.h1`
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital@1&family=Fjalla+One&display=swap');
 font-family: 'Bebas Neue', sans-serif;
 text-align: right;
 font-size: 5.8rem;

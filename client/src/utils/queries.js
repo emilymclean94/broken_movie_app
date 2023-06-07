@@ -14,7 +14,6 @@ export const QUERY_USER = gql`
         title
         releaseDate
         description
-        rated
       }
       watched {
         _id
@@ -22,7 +21,6 @@ export const QUERY_USER = gql`
         title
         releaseDate
         description
-        rated
         rating
       }
     }
@@ -43,7 +41,6 @@ query user($username: String!) {
       title
       releaseDate
       description
-      rated
     }
     watched {
       _id
@@ -51,7 +48,6 @@ query user($username: String!) {
       title
       releaseDate
       description
-      rated
       rating
     }
   }
@@ -59,7 +55,7 @@ query user($username: String!) {
 `;
 
 export const QUERY_MOVIES = gql`
-  query getMovie {
+  query getMovies {
     movie {
         _id
         posterImg

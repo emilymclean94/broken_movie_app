@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const movieScema = require("./Movie");
+const movieSchema = require("./Movie");
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
@@ -9,14 +9,24 @@ const userSchema = new Schema(
     password: { type: String, required: true, minlength: 5 },
     // avatar: { type: String }, 
     email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'], },
-    // myList: [movieScema],
-    // watched: [movieScema],
+    myList: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Movie',
+      },
+    ],
+    watched: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+    },
+  ],
     friends: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'User',
-        },
-      ],
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   {
     toJSON: {
@@ -32,19 +42,19 @@ userSchema
   })
 
 
-  userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-      const saltRounds = 10;
-      this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-  
-    next();
-  });
-  
-  userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
-  };
-  
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
 
 const User = model('User', userSchema);
 
