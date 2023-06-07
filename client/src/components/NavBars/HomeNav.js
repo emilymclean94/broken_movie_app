@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,10 +10,17 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-// import styled from '@emotion/styled';
-// import logo from '../../Assets/Icons/logo.png';
+import styled from '@emotion/styled';
+import head from '../Assets/images/head.png';
+import { useState } from 'react';
+import LogIn from '../ModalsPages/LoginModal';
+import SignUp from '../ModalsPages/SignUpModal';
 
-const pages = ['Login'];
+const Icon = styled.img`
+    width: 2rem;
+    `;
+
+
 
 function HomeNav() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,12 +32,20 @@ function HomeNav() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const [open, setOpen] = useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Icon src={head} alt="icon" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -78,11 +93,12 @@ function HomeNav() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+                <LogIn open={open} onClick={handleOpen}>
+                  <Typography textAlign="center">LogIn</Typography>
+                </LogIn>
+                <SignUp open={open} onClick={handleOpen}>
+                  <Typography textAlign="center">SignUp</Typography>
+                </SignUp>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -104,17 +120,6 @@ function HomeNav() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>
