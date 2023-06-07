@@ -43,7 +43,6 @@ const LogIn = () => {
 <form onSubmit={handleFormSubmit} className="modal-box">
 <Button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
     <div>
-
             <TextField label="Your email"
             sx={{ m: 1, width: '25ch' }}
             id="email1"
@@ -58,7 +57,7 @@ const LogIn = () => {
             required
             type="username"
             />
-     <FormControl required sx={{ m: 1, width: '25ch' }} variant="outlined">
+        <FormControl required sx={{ m: 1, width: '25ch' }} variant="outlined">
             <InputLabel htmlFor="update-password">Password</InputLabel>
             <OutlinedInput
             sx={{ m: 1, width: '25ch' }}
