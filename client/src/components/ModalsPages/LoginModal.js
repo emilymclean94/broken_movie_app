@@ -81,7 +81,9 @@ const LogIn = () => {
                     <form onClick={handleFormSubmit} className="modal-box">
                         <Button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
                         <div>
+
                             <TextField label="username"
+
                                 sx={{ m: 1, width: '25ch' }}
                                 id="username1"
                                 placeholder="j@neDoe33"
