@@ -1,0 +1,19 @@
+.avatar-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 30em;
+    height: 30em;
+}
+.avatar-picture{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.selected-avatar{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

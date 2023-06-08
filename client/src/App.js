@@ -12,19 +12,22 @@ import Signup from './components/ModalsPages/SignUpModal';
 
 function App() {
   return (
-    <Router>
-    <div className='App'>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/feed' element={<Feed />} />
-        <Route path='/yourdashboard' element={<FriendDashboard />} />
-        <Route path='/mydashboard' element={<MyDashboard />} />
-        <Route path='/movieapi' element={<MovieAPI />} />
-      </Routes>
-    </div>
-  </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ApolloProvider client={client}>
+      <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/signup" element={<SignUp/>}/>
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/yourdashboard" element={<FriendDashboard />} />
+            <Route path="/mydashboard" element={<MyDashboard />} />
+            <Route path="/moviesearch" element={<MovieSearch />} />
+          </Routes>
+        </Router>
+      </ApolloProvider>
+    </ThemeProvider>
   );
 }
 

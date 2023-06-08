@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 //! Did not add star rating yet - need to add after testing
+//! Took avatar out of user and create user mutation
 
 const typeDefs = gql`
   # Define which fields are accessible from the model
@@ -11,6 +12,8 @@ const typeDefs = gql`
     username: String
     avatar: String
     email: String
+    genre: String
+    bio: String
     myList:[Movie]
     watched: [Movie]
     friends: [User]
@@ -22,7 +25,6 @@ const typeDefs = gql`
     title: String
     releaseDate: String
     description: String
-    rated: Boolean
     rating: String
     createdAt: String
 }
@@ -34,7 +36,6 @@ type movieInput {
     title: String
     releaseDate: String
     description: String
-    rated: Boolean
     rating: String
     updatedAt: String
 }
@@ -49,13 +50,15 @@ type Auth {
   type Query {
     users: [User]
     user(username: String!): User
-    movie(movieId: ID!): Movie
+    movie: [Movie]
     movies(username: String!): [Movie]
+    me: User
   }
 
   type Mutation {
     login(username: String!, password: String!): Auth
-    addUser(firstname: String!, username: String!,email: String!, password: String!): Auth
+    addUser(firstname: String!, username: String!,email: String!, password: String!, genre: String, bio: String): Auth
+    addMovie(username: String!): User
     removeMovie(movieId: ID!): User
 }
 `;

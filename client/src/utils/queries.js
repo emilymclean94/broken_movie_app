@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+//! Removed avatar from user queries
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -7,6 +9,8 @@ export const QUERY_USER = gql`
       firstname
       username
       email
+      genre
+      bio
       friends
       myList {
         _id
@@ -14,7 +18,6 @@ export const QUERY_USER = gql`
         title
         releaseDate
         description
-        rated
       }
       watched {
         _id
@@ -22,15 +25,43 @@ export const QUERY_USER = gql`
         title
         releaseDate
         description
-        rated
         rating
       }
     }
   }
 `;
 
+export const QUERY_ME = gql`
+query user($username: String!) {
+  user(username: $username) {
+    _id
+    firstname
+    username
+    email
+    genre
+    bio
+    friends
+    myList {
+      _id
+      posterImg
+      title
+      releaseDate
+      description
+    }
+    watched {
+      _id
+      posterImg
+      title
+      releaseDate
+      description
+      rating
+    }
+  }
+}
+`;
+
 export const QUERY_MOVIES = gql`
-  query getMovie {
+  query getMovies {
     movie {
         _id
         posterImg

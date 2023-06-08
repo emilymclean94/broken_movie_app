@@ -1,0 +1,27 @@
+h1 {
+    width: 100%;
+    display: flex;
+    color: #0000ff;
+    font-size: 4em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.one{
+    padding-top: 4em;
+}
+
+.fade {
+    scroll-behavior: smooth;
+}
+.last{
+    padding-bottom: 4em;
+}
+h3{
+    color:#0077ff;
+}
+
+

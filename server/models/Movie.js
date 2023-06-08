@@ -6,7 +6,6 @@ const movieSchema = new Schema(
     title: { type: String, required: true },
     releaseDate: { type: String, required: true },
     description: { type: String, required: true },
-    rated: { type: Boolean, required: true },
     rating: { type: String },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
