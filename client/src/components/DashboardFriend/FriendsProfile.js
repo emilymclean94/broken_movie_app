@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 
 const FriendsProfile = () => {
     return (
-<CardCoontainer>
+<CardContainer>
     <Avatar  sx={{ width: 200, height: 200 }}>
     <img src={avatar} alt='user avatar' width='200px' height='200px'/>
     </Avatar>
@@ -20,11 +20,11 @@ const FriendsProfile = () => {
                     <RemoveFriendButton>Remove Friend</RemoveFriendButton>
                 </ButtonsContainer>
         </DetailsContainer>
-</CardCoontainer>
+</CardContainer>
     )
 }
 
-const CardCoontainer = styled.div`
+const CardContainer = styled.div`
 display: flex;
   align-items: center;
   background-color: #f5f5f5;
