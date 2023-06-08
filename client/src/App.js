@@ -7,7 +7,10 @@ import Home from './pages/Home';
 import Feed from './pages/Feed';
 import FriendDashboard from './pages/FriendDashboard';
 import MyDashboard from './pages/MyDashboard';
+// import MovieAPI from './components/Movies/MovieAPI';
+
 import MovieAPI from './pages/Movies/MovieAPI';
+
 import Login from '../src/components/ModalsPages/LoginModal';
 import Signup from './components/ModalsPages/SignUpModal';
 import { createTheme, colors, ThemeProvider } from '@mui/material';
