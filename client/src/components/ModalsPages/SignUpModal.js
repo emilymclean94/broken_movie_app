@@ -64,10 +64,6 @@ const SignUp = () => {
     };
 
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
     //? Handling user input in form and reading the value
     const [formState, setFormState] = useState({
         firstname: '',
@@ -107,6 +103,9 @@ const SignUp = () => {
         }
     };
 
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <div>
