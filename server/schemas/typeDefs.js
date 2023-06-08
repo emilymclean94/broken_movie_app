@@ -52,6 +52,7 @@ type Auth {
     user(username: String!): User
     movie: [Movie]
     movies(username: String!): [Movie]
+    me: User
   }
 
   type Mutation {

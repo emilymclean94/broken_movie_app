@@ -30,7 +30,7 @@ const style = {
     flexWrap: 'wrap',
 };
 
-const Login = (props) => {
+const Login = () => {
     const [formState, setFormState] = useState({ username: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -46,7 +46,7 @@ const Login = (props) => {
             const { data } = await login({
                 variables: { ...formState },
             });
-
+            console.log(data);
            const token = data.login.token
            Auth.login(token);
 
@@ -59,7 +59,7 @@ const Login = (props) => {
             username: '',
             password: '',
         })
-
+        window.location.assign('/mydashboard');
     }
 
 
@@ -132,7 +132,7 @@ const Login = (props) => {
                             </FormControl>
                         </div>
                         <div className="modal-action">
-                            <Button sx={{ m: 1, width: '25ch' }} type="submit" className="Submit"> <Link to="/mydashboard">LogIn</Link></Button>
+                            <Button sx={{ m: 1, width: '25ch' }} type="submit" className="Submit"> LogIn</Button>
                         </div>
                     </form>
                 </Box>

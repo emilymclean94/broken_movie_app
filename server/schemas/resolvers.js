@@ -34,11 +34,11 @@ const resolvers = {
           const { username, email, password, bio, genre, firstname } = input;
           const user = await User.create({ firstname, username, email, password, genre, bio });
           const token = signToken(user);
-          return { token, user: { _id: user._id, username: user.username }};
+          return { token, user };
         },
         login: async (parent, { username, password }) => {
           const user = await User.findOne({ username });
-    
+
           if (!user) {
             throw new AuthenticationError('No user found with this username');
           }
