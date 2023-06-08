@@ -22,8 +22,6 @@ const theme= createTheme({
   palette:{
   background: {
     default: "linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, primary.main 100%)"},
-    text:{
-      common: white},
     primary:{
       main: colors.blue[500],
       light: colors.blue[300],
@@ -39,6 +37,8 @@ const theme= createTheme({
     white: colors.grey[50],
     grey: colors.grey[400],
   },
+    text:{
+      common: colors.grey[50],},
   },
   style:{Card: {
   width: 300,
