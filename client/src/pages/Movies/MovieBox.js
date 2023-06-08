@@ -47,7 +47,7 @@ const MovieBox = ({ title, poster_path, vote_average, release_date, overview }) 
             <div className={styles.paper}>
               <img className="card-img-top" style={{ width: '14rem' }} src={API_IMG + poster_path} alt="movie" />
               <h3>{title}</h3>
-              <h4>IMDb: {vote_average}</h4>
+              <h4>TMDb: {vote_average}</h4>
               <h5>Release Date: {release_date}</h5>
               <br />
               <h6>Overview</h6>

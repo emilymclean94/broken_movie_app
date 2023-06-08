@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -34,19 +35,19 @@ const theme = createTheme({
       grey: colors.grey[400],
     },
   },
-  style: {
-    Card: {
-      width: 300,
-      margin: 'auto'
-    },
+  
+  style:{Card: {
+  width: 300,
+  margin: "auto"
+},
   },
-  Media: {
-    height: 550,
-    width: '100%'
-  },
-  Typography: {
-    fontFamily: 'Bebas Neue, sans-serif',
-  },
+Media: {
+  height: 550,
+  width: "100%"
+},
+Typography:{
+  fontFamily: "Bebas Neue, sans-serif",
+},
 });
 
 function App() {

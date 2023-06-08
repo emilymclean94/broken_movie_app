@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MovieAPI.css";
+// import "./MovieAPI.css";
 import MovieBox from "./MovieBox";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,8 +8,6 @@ import Container from '@mui/material/Container';
 import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
-
-
 
 const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=bb8c9e655b550c820642d263e87af207";
 
@@ -28,6 +26,7 @@ function MovieAPI() {
       });
   }, []);
 
+  //!--- SEARCH FUNCTION. BUTTON BELOW ---!//
   const searchMovie = async (e) => {
     e.preventDefault();
     console.log("Searching");
@@ -52,12 +51,13 @@ function MovieAPI() {
         <Toolbar>
           <Container maxWidth="lg">
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              MovieDb App
+              STREAMVERSE
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Trending
             </Typography>
             <div style={{ flexGrow: 1 }}></div>
+            {/* SEARCH BUTTON. REUSE THIS! */}
             <form onSubmit={searchMovie} autoComplete="off">
               <div style={{ display: "flex" }}>
                 <InputBase
