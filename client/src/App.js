@@ -8,7 +8,7 @@ import SignUp from "./components/ModalsPages/SignUpModal";
 import Feed from "./pages/Feed";
 import FriendDashboard from "./pages/FriendDashboard";
 import MyDashboard from "./pages/MyDashboard";
-import MovieAPI from "./pages/Movies/MovieAPI";
+import MovieSearch from "./pages/Movies/MovieSearch";
 import {colors, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 
 
@@ -65,7 +65,7 @@ function App() {
             <Route path="/feed" element={<Feed />} />
             <Route path="/yourdashboard" element={<FriendDashboard />} />
             <Route path="/mydashboard" element={<MyDashboard />} />
-            <Route path="/movieapi" element={<MovieAPI />} />
+            <Route path="/moviesearch" element={<MovieSearch />} />
           </Routes>
         </Router>
 
