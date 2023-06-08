@@ -9,15 +9,15 @@ import Auth from '../../utils/auth';
 
 
 const UserProfile = () => {
-    // const { username: userParam } = useParams();
+    // const { username } = useParams();
   
-    // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    //   variables: { username: userParam },
+    // const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
+      // variables: { username: username },
     // });
   
     // const user = data?.me || data?.user || {};
     // // navigate to personal profile page if username is yours
-    // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    // if (Auth.loggedIn() && Auth.getProfile().data.username === username) {
     //   return <Navigate to="/user" />;
     // }
     // if (loading) {

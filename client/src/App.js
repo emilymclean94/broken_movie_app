@@ -10,6 +10,7 @@ import FriendDashboard from "./pages/FriendDashboard";
 import MyDashboard from "./pages/MyDashboard";
 import MovieSearch from "./pages/Movies/MovieSearch";
 import {colors, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import UserProfile from "./components/DashboardUser/UserProfile";
 
 
 const client = new ApolloClient({
@@ -71,6 +72,7 @@ function App() {
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/feed" element={<Feed />} />
             <Route path="/yourdashboard" element={<FriendDashboard />} />
+            <Route path="/me" element={<MyDashboard />} />
             <Route path="/mydashboard" element={<MyDashboard />} />
             <Route path="/moviesearch" element={<MovieSearch />} />
           </Routes>
