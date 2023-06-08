@@ -4,7 +4,7 @@ import { colors } from "@mui/material";
 const fontUrl = `@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap");`;
 
 const theme = createTheme({
-  breakpoints: ["sm", "md", "lg"],
+  // breakpoints: ["sm", "md", "lg"],
   palette: {
     background: {
       default: colors.grey[400],
