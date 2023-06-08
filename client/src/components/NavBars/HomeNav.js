@@ -2,8 +2,8 @@ import * as React from 'react';
 import { AppBar, spacing, Toolbar, Typography, Container, } from "@mui/material";
 import styled from '@emotion/styled';
 import head from '../Assets/images/head.png';
-
-
+import LogIn from '../ModalsPages/LoginModal'
+import SignUp from '../ModalsPages/SignUpModal'
 const HomeItem = styled.div`
     color: white;
     justify-content: space-between;
@@ -51,7 +51,7 @@ function HomeNav() {
         </Toolbar>
       </Container>
     </AppBar>
-    
+
   );
 }
 export default HomeNav;
