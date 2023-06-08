@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -10,6 +12,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import Auth from '../../utils/auth';
 import { formHelperTextClasses } from '@mui/material';
 // import { useState } from 'react';
 
@@ -28,10 +31,29 @@ const style = {
   };
 
 const LogIn = () => {
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
-        console.log('LogIn Successful:');
-        // TODO: Redirect to the feed page but need to make sure that is the name route we are using for feed
+    const [formState, setFormState] = useState({ username: '', password: '' });
+  const [logIn, { error, data }] = useMutation(LOGIN_USER);
+
+    const handleChange = (event) => {const { name, value } = event.target;setFormState({
+...formState, [name]: value})}
+      const handleFormSubmit = async (event) => {
+        event.preventDefault() 
+    try {
+      const { data } = await logIn({
+        variables: { ...formState },
+      });
+
+      Auth.logIn(data.logIn.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    })
+  
     }
     const [showPassword, setShowPassword] = React.useState(false);
 
@@ -39,7 +61,7 @@ const LogIn = () => {
 
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
-    };
+    }
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -56,22 +78,17 @@ const LogIn = () => {
             >
                 <Box sx={style}>
                     
-                    <form onSubmit={handleFormSubmit} className="modal-box">
+                    <form onClick={handleFormSubmit} className="modal-box">
                         <Button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
                         <div>
-                            <TextField label="Your email"
-                                sx={{ m: 1, width: '25ch' }}
-                                id="email1"
-                                placeholder="janedoe@email.com"
-                                required
-                                type="email"
-                            />
-                            <TextField label="Username"
+
+                            <TextField label="username"
+
                                 sx={{ m: 1, width: '25ch' }}
                                 id="username1"
                                 placeholder="j@neDoe33"
                                 required
-                                type="username"
+                                name="username"
                             />
                             <FormControl required sx={{ m: 1, width: '25ch' }} variant="outlined">
                                 <InputLabel htmlFor="update-password">Password</InputLabel>
@@ -91,12 +108,12 @@ const LogIn = () => {
                                             </IconButton>
                                         </InputAdornment>
                                     }
-                                    label="Password"
+                                    label="password"
                                 />
                             </FormControl>
                         </div>
                         <div className="modal-action">
-                            <Button sx={{ m: 1, width: '25ch' }} className="Submit">LogIn</Button>
+                            <Button sx={{ m: 1, width: '25ch' }} onClick={handleFormSubmit} className="Submit">LogIn</Button>
                         </div>
                     </form>
                 </Box>

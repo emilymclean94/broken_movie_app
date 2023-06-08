@@ -7,8 +7,10 @@ const userSchema = new Schema(
     firstname: { type: String, required: true },
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true, minlength: 5 },
-    // avatar: { type: String }, 
+    avatar: { type: String }, 
     email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'], },
+    genre: { type: String},
+    bio: { type: String },
     myList: [
       {
         type: Schema.Types.ObjectId,
