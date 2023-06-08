@@ -13,7 +13,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
-import { formHelperTextClasses } from '@mui/material';
+import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 
 const style = {
@@ -28,33 +28,41 @@ const style = {
     p: 4,
     display: 'flex',
     flexWrap: 'wrap',
-  };
+};
 
-const LogIn = () => {
+const Login = (props) => {
     const [formState, setFormState] = useState({ username: '', password: '' });
-  const [logIn, { error, data }] = useMutation(LOGIN_USER);
+    const [login, { error, data }] = useMutation(LOGIN_USER);
 
-    const handleChange = (event) => {const { name, value } = event.target;setFormState({
-...formState, [name]: value})}
-      const handleFormSubmit = async (event) => {
-        event.preventDefault() 
-    try {
-      const { data } = await logIn({
-        variables: { ...formState },
-      });
-
-      Auth.logIn(data.logIn.token);
-    } catch (e) {
-      console.error(e);
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({ ...formState, [name]: value })
     }
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    })
-  
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await login({
+                variables: { ...formState },
+            });
+
+           const token = data.login.token
+           Auth.login(token);
+
+        } catch (e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            username: '',
+            password: '',
+        })
+
     }
+
+
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -76,8 +84,8 @@ const LogIn = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    
-                    <form onClick={handleFormSubmit} className="modal-box">
+
+                    <form onSubmit={handleFormSubmit} className="modal-box">
                         <Button onClick={handleClose} htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
                         <div>
 
@@ -87,11 +95,22 @@ const LogIn = () => {
                                 id="username1"
                                 placeholder="j@neDoe33"
                                 required
+                                value={formState.username}
                                 name="username"
+                                onChange={handleChange}
                             />
-                            <FormControl required sx={{ m: 1, width: '25ch' }} variant="outlined">
+                           
+                            <FormControl 
+                                required 
+                                sx={{ m: 1, width: '25ch' }} 
+                                variant="outlined" 
+                                onChange={handleChange} >
+
                                 <InputLabel htmlFor="update-password">Password</InputLabel>
+
                                 <OutlinedInput
+                                    value={formState.password} 
+                                    name= 'password'
                                     sx={{ m: 1, width: '25ch' }}
                                     id="update-password"
                                     type={showPassword ? 'text' : 'password'}
@@ -108,11 +127,12 @@ const LogIn = () => {
                                         </InputAdornment>
                                     }
                                     label="password"
+                                    
                                 />
                             </FormControl>
                         </div>
                         <div className="modal-action">
-                            <Button sx={{ m: 1, width: '25ch' }} onClick={handleFormSubmit} className="Submit">LogIn</Button>
+                            <Button sx={{ m: 1, width: '25ch' }} type="submit" className="Submit"> <Link to="/mydashboard">LogIn</Link></Button>
                         </div>
                     </form>
                 </Box>
@@ -120,4 +140,4 @@ const LogIn = () => {
         </>
     );
 }
-export default LogIn;
+export default Login;

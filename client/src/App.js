@@ -4,12 +4,12 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "./App.css";
 import Home from "./pages/Home";
 import Login from "../src/components/ModalsPages/LoginModal";
-import Signup from "./components/ModalsPages/SignUpModal";
+import SignUp from "./components/ModalsPages/SignUpModal";
 import Feed from "./pages/Feed";
 import FriendDashboard from "./pages/FriendDashboard";
 import MyDashboard from "./pages/MyDashboard";
 import MovieAPI from "./pages/Movies/MovieAPI";
-import {colors, createTheme, CssBaseline, Stack, ThemeProvider} from "@mui/material";
+import {colors, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 
 
 const client = new ApolloClient({
@@ -68,7 +68,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login/>}/>
-            <Route path="/signup" element={<Signup/>}/>
+            <Route path="/signup" element={<SignUp/>}/>
             <Route path="/feed" element={<Feed />} />
             <Route path="/yourdashboard" element={<FriendDashboard />} />
             <Route path="/mydashboard" element={<MyDashboard />} />
