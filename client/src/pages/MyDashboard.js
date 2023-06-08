@@ -6,21 +6,17 @@ import UserProfile from '../components/DashboardUser/UserProfile';
 // import SearchResults from '../components/DashboardUser/MovieResults';
 import MyToWatch from '../components/DashboardUser/MyToWatch';
 import MyWatchedList from '../components/DashboardUser/MyWatchedList';
- 
 
 const MyDashboard = () => {
+   
     return (
         <>
-            <NavBar />
-
-            <h1>Testing dashboard</h1>
-            
+            <NavBar/>
             <UserProfile/>
             {/* <SearchBar />
             <SearchResults /> */}
             <MyToWatch />
             <MyWatchedList />
-
             <Footer />
         </>
     );
