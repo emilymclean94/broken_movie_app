@@ -72,14 +72,13 @@ const LogIn = () => {
             <Button onClick={handleOpen}>LogIn</Button>
             <Modal
                 open={open}
-                onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
                     
                     <form onClick={handleFormSubmit} className="modal-box">
-                        <Button htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
+                        <Button onClick={handleClose} htmlFor="my-modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Button>
                         <div>
 
                             <TextField label="username"
