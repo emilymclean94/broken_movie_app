@@ -13,6 +13,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 import { formHelperTextClasses } from '@mui/material';
 // import { useState } from 'react';
 
@@ -47,7 +48,7 @@ const Login = (props) => {
                 variables: { ...formState },
             });
 
-            Auth.login(data.login.token);
+           const token = Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
         }
@@ -59,6 +60,8 @@ const Login = (props) => {
         })
 
     }
+
+
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -128,7 +131,7 @@ const Login = (props) => {
                             </FormControl>
                         </div>
                         <div className="modal-action">
-                            <Button sx={{ m: 1, width: '25ch' }} onClick={handleFormSubmit} className="Submit">LogIn</Button>
+                            <Button sx={{ m: 1, width: '25ch' }} type="submit" className="Submit"> <Link to="/mydashboard">LogIn</Link></Button>
                         </div>
                     </form>
                 </Box>

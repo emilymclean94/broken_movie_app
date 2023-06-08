@@ -10,7 +10,7 @@ import MyWatchedList from '../components/DashboardUser/MyWatchedList';
 
 const MyDashboard = () => {
     return (
-        <div>
+        <>
             {/* <NavBar /> */}
 
             <h1>Testing dashboard</h1>
@@ -22,7 +22,7 @@ const MyDashboard = () => {
             <MyWatchedList />
 
             <Footer />
-        </div>
+        </>
     );
 };
 
