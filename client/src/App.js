@@ -31,7 +31,7 @@ const theme = createTheme({
       light: colors.deepPurple[100],
       dark: colors.purple[800],
     },
-
+  }
 });
 
 function App() {

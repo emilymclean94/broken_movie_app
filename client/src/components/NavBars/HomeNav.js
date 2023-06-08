@@ -41,12 +41,12 @@ function HomeNav() {
               fontWeight: 200,
               color: 'white',p: 3,
             display: { xs: 'none'}}}
-              >SIGN UP</HomeItem> 
+              ><SignUp/></HomeItem> 
               </Typography>
               <Typography >       
   <HomeItem edge="end" xs={{textAlign: 'right', display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
-              color: 'white',}}>LOG IN</HomeItem>
+              color: 'white',}}><LogIn/></HomeItem>
               </Typography>
         </Toolbar>
       </Container>
