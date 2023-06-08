@@ -12,8 +12,18 @@ const Container = styled.div`
 background-color: #000000;
 `
 
+const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital@1&family=Fjalla+One&display=swap');
+font-family: 'Bebas Neue', sans-serif;
+text-align: left;
+font-size: 5.8rem;
+color: white;
+padding: 0 3.7rem 0 0;
+margin: 0;
+`
+
 const SubTitle = styled.h3`
-text-align: right;
+text-align: left;
 width: 89vh;
 font-size: 2rem;
 color: #808080;
@@ -32,10 +42,7 @@ const Hero = () => {
     </Grid>
     <Grid row item xs={1} sm={3}>
     <SubTitle >INTO THE</SubTitle>
-    <div>
-      <span className="text">&nbsp;STREAMVERSE&nsbsp;</span> 
-      <span className="hover-text">&nbsp;STREAMVERSE&nsbsp;</span> 
-    </div>
+    <Title >STREAMVERSE</Title>
     </Grid>
     </Grid>
 </Container>
