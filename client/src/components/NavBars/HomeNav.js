@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import head from '../Assets/images/head.png';
 import LogIn from '../ModalsPages/LoginModal';
 import SignUp from '../ModalsPages/SignUpModal';
+
 const HomeItem = styled.div`
     color: white;
     justify-content: space-between;
@@ -37,14 +38,14 @@ function HomeNav() {
             STREAMVERSE
           </Typography>
             <Typography >
-  <HomeItem sx={{textAlign: 'right', fontFamily: 'Chakra Petch, sans-serif',
+    <HomeItem sx={{textAlign: 'right', fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',p: 3,
             display: { xs: 'none'}}}
               ><SignUp/></HomeItem> 
               </Typography>
               <Typography >       
-  <HomeItem edge="end" xs={{textAlign: 'right', display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
+    <HomeItem edge="end" xs={{textAlign: 'right', display: {xs:'none', md: 'flex', }, p: 3, fontFamily: 'Chakra Petch, sans-serif',
               fontWeight: 200,
               color: 'white',}}><LogIn/></HomeItem>
               </Typography>

@@ -1,8 +1,22 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from "@mui/material";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import head from '../Assets/images/head.png';
+
+
+const Icon = styled.img`
+    width: 2rem;
+    `;
 
 const pages = ['Home', 'Feed', 'My Dashboard', 'Friends', 'Logout'];
 
@@ -17,20 +31,12 @@ function NavBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Icon src={head} alt="icon" />
           <Typography
             variant="h6"
             noWrap
@@ -102,9 +108,9 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            STREAMVERSE
+            LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, textAlign: 'right', display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}

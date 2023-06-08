@@ -10,18 +10,18 @@ import review5 from './homeimages/review5.png';
 
 
 
-const Carousel = () => {
+const Marquee = () => {
     return (
-        <CarouselContainer>
+        <MarqueeContainer>
                 <IMG src={review1} alt="first review"/>
                 <IMG src={review2} alt="second review"/>
                 <IMG src={review3} alt="second review"/>
                 <IMG src={review4} alt="second review"/>
                 <IMG src={review5} alt="second review"/>
-        </CarouselContainer>
+        </MarqueeContainer>
     )
 }
-const CarouselContainer = styled.div`
+const MarqueeContainer = styled.div`
 display:flex;
 flex-direction: row;
 justify-content: center;
@@ -62,4 +62,4 @@ animation: marquee 10s linear infinite;
         }
       }
     `
-export default Carousel;
+export default Marquee;
