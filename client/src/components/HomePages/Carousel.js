@@ -6,6 +6,7 @@ import review2 from './homeimages/review2.png';
 import review3 from './homeimages/review3.png';
 import review4 from './homeimages/review4.png';
 import review5 from './homeimages/review5.png';
+import Marquee from "react-fast-marquee";
 
 const CarouselContainer = styled.div`
 display: flex;
@@ -26,6 +27,7 @@ hover: {
 
 const Carousel = () => {
     return (
+        <Marquee>
         <CarouselContainer>
                 <IMG className="add-hover" src={review1} alt="first review"/>
                 <IMG className="add-hover" src={review2} alt="second review"/>
@@ -33,6 +35,7 @@ const Carousel = () => {
                 <IMG className="add-hover" src={review4} alt="second review"/>
                 <IMG className="add-hover" src={review5} alt="second review"/>
         </CarouselContainer>
+        </Marquee>
     )
 }
 export default Carousel;

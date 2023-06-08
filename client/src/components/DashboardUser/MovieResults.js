@@ -9,6 +9,7 @@
 //                 <img src={result.image} alt={result.title} />
 //                 <h3>{result.title}</h3>
 //                 <p>{result.description}</p>
+//                  <button> add to list</button>
 //                 </div>
 //             ))}
 //     </div>
