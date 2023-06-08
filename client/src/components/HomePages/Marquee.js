@@ -8,8 +8,6 @@ import review4 from './homeimages/review4.png';
 import review5 from './homeimages/review5.png';
 
 
-
-
 const Marquee = () => {
     return (
         <MarqueeContainer>

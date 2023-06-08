@@ -1,15 +1,6 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import styled from '@emotion/styled';
 import head from '../Assets/images/head.png';
 
@@ -31,9 +22,18 @@ function NavBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <AppBar position="static">
+    <AppBar style={{ background: '#0077ff' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Icon src={head} alt="icon" />
@@ -45,10 +45,9 @@ function NavBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              fontFamily: 'Chakra Petch, sans-serif',
+              fontWeight: 200,
+              color: 'white',
               textDecoration: 'none',
             }}
           >
@@ -86,7 +85,17 @@ function NavBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography 
+                  textAlign="center"
+                  sx={{
+                    display: { xs: 'none', md: 'flex' },
+                    fontFamily: 'Chakra Petch, sans-serif',
+                    fontWeight: 200,
+                    color: 'white',
+                    p: 3,
+                    textDecoration: 'none',
+                  }}
+                  >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
