@@ -1,15 +1,15 @@
-import  React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import './App.css';
-import Home from './pages/Home';
-import Feed from './pages/Feed';
-import FriendDashboard from './pages/FriendDashboard';
-import MyDashboard from './pages/MyDashboard';
-import MovieAPI from './components/Movies/MovieAPI';
-import Login from '../src/components/ModalsPages/LoginModal';
-import Signup from './components/ModalsPages/SignUpModal';
-import {createTheme, colors, ThemeProvider} from '@mui/material';
+import  React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import "./App.css";
+import Home from "./pages/Home";
+import Login from "../src/components/ModalsPages/LoginModal";
+import Signup from "./components/ModalsPages/SignUpModal";
+import Feed from "./pages/Feed";
+import FriendDashboard from "./pages/FriendDashboard";
+import MyDashboard from "./pages/MyDashboard";
+import MovieAPI from "./pages/Movies/MovieAPI";
+import {createTheme, colors, ThemeProvider} from "@mui/material";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -28,22 +28,22 @@ const theme= createTheme({
     dark: colors.purple[800],
   },
   common:{
-    black: '#000000',
+    black: "#000000",
     white: colors.grey[50],
     grey: colors.grey[400],
   },
   },
   style:{Card: {
   width: 300,
-  margin: 'auto'
+  margin: "auto"
 },
   },
 Media: {
   height: 550,
-  width: '100%'
+  width: "100%"
 },
 Typography:{
-  fontFamily: 'Bebas Neue, sans-serif',
+  fontFamily: "Bebas Neue, sans-serif",
 },
 });
 function App() {
