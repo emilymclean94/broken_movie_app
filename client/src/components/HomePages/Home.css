@@ -1,17 +1,22 @@
 h1 {
     height: 50vh;
     width: 100%;
-    padding-top: 6em;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 6em;
-    color: blue;
+    color: #0000ff;
     font-size: 4em;
     font-weight: 500;
     align-items: center;
     justify-content: center;
     align-content: center;
     margin: auto;
+    font-family: 'Bebas Neue', sans-serif;
 }
+.one{
+    padding-top: 6em;
+}
+
 .fade {
     scroll-behavior: smooth;
 }
-

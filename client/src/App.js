@@ -21,7 +21,7 @@ const client = new ApolloClient({
 const theme= createTheme({
   palette:{
   background: {
-    default: "linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, primary.main 100%)"},
+    default: "linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, blue 100%)"},
     primary:{
       main: colors.blue[500],
       light: colors.blue[300],
@@ -50,7 +50,7 @@ Media: {
   width: "100%"
 },
 Typography:{
-  fontFamily: "Bebas Neue, sans-serif",
+  fontFamily: "Chakra Petch, sans-serif",
 },
 });
 
@@ -58,6 +58,9 @@ function App() {
   return (
     
     <ThemeProvider theme={theme}>
+      <style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap');
+</style>
       <CssBaseline />
       <ApolloProvider client={client}>
 
