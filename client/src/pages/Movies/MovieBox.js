@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "./MovieAPI.css";
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 
