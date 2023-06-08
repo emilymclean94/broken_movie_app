@@ -11,6 +11,7 @@ import MyDashboard from "./pages/MyDashboard";
 import MovieAPI from "./pages/Movies/MovieAPI";
 import {colors, createTheme, CssBaseline, Stack, ThemeProvider} from "@mui/material";
 
+
 const client = new ApolloClient({
   uri: "/graphql",
   cache: new InMemoryCache(),
