@@ -17,11 +17,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
+// linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, blue 100%)
 const theme= createTheme({
   palette:{
   background: {
-    default: "linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, blue 100%)"},
+    default: "colors.grey[400]"},
     primary:{
       main: colors.blue[500],
       light: colors.blue[300],

@@ -13,7 +13,7 @@ const Scroll1 = () => {
             <h1 >Love Making Friends?</h1>
             </Fade>
             <Fade  left effectOut="fadeOutTop">
-            <h1>Sign Up Today!</h1>
+            <h1 className="last">Sign Up Today!</h1>
             </Fade> 
         </div>
     )
