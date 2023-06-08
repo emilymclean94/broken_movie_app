@@ -18,20 +18,40 @@ const client = new ApolloClient({
 });
 
 
-const theme = createTheme({
-  palette: {
-    primary: {
+const theme= createTheme({
+  palette:{
+  background: {
+    default: "linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, primary.main 100%)"},
+    text:{
+      common: white},
+    primary:{
       main: colors.blue[500],
       light: colors.blue[300],
       dark: colors.indigo[800],
-    },
-    secondary: {
-
-      main: colors.purple[500],
-      light: colors.deepPurple[100],
-      dark: colors.purple[800],
-    },
-
+  },
+  secondary:{
+    main: colors.purple[500],
+    light: colors.deepPurple[100],
+    dark: colors.purple[800],
+  },
+  common:{
+    black: "#000000",
+    white: colors.grey[50],
+    grey: colors.grey[400],
+  },
+  },
+  style:{Card: {
+  width: 300,
+  margin: "auto"
+},
+  },
+Media: {
+  height: 550,
+  width: "100%"
+},
+Typography:{
+  fontFamily: "Bebas Neue, sans-serif",
+},
 });
 
 function App() {

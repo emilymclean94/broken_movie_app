@@ -12,8 +12,6 @@ h1 {
     margin: auto;
 }
 .fade {
-    background-color: black;
     scroll-behavior: smooth;
-    /* add gradient into blue bottom */
 }
 
