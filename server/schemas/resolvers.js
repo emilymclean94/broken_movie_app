@@ -4,6 +4,7 @@ const { signToken } = require('../utils/auth');
 
 
 // ! Copy pasta below -- refactoring in progress
+// ! Took avatar out of create user mutation - will need to reinsert
 
 const resolvers = {
     Query: {
@@ -30,8 +31,8 @@ const resolvers = {
     },
     Mutation: {
         addUser: async (parent, input) => {
-          const { username, email, password, bio, avatar, genre, firstname } = input;
-          const user = await User.create({ username, email, password, bio, avatar, genre, firstname });
+          const { username, email, password, bio, genre, firstname } = input;
+          const user = await User.create({ firstname, username, email, password, genre, bio });
           const token = signToken(user);
           return { token, user: { _id: user._id, username: user.username }};
         },

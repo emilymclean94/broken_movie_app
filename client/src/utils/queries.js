@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+//! Removed avatar from user queries
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -7,7 +9,6 @@ export const QUERY_USER = gql`
       firstname
       username
       email
-      avatar
       genre
       bio
       friends
@@ -37,7 +38,6 @@ query user($username: String!) {
     firstname
     username
     email
-    avatar
     genre
     bio
     friends

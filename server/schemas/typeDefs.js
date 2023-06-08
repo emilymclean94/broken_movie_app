@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 //! Did not add star rating yet - need to add after testing
+//! Took avatar out of user and create user mutation
 
 const typeDefs = gql`
   # Define which fields are accessible from the model
@@ -55,7 +56,7 @@ type Auth {
 
   type Mutation {
     login(username: String!, password: String!): Auth
-    addUser(firstname: String!, username: String!,email: String!, password: String!): Auth
+    addUser(firstname: String!, username: String!,email: String!, password: String!, genre: String, bio: String): Auth
     addMovie(username: String!): User
     removeMovie(movieId: ID!): User
 }
