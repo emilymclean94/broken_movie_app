@@ -14,7 +14,6 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-import { formHelperTextClasses } from '@mui/material';
 // import { useState } from 'react';
 
 const style = {
@@ -48,7 +47,9 @@ const Login = (props) => {
                 variables: { ...formState },
             });
 
-           const token = Auth.login(data.login.token);
+           const token = data.login.token
+           Auth.login(token);
+
         } catch (e) {
             console.error(e);
         }
