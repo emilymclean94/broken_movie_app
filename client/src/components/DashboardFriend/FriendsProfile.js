@@ -1,30 +1,20 @@
 import React from 'react';
 import avatar from '../Assets/AvatarImages/Avatar1.png';
-import { Grid, Box, Avatar } from '@mui/material';
-import styled from 'emotion-styled';
+import { Avatar } from '@mui/material';
+import styled from '@emotion/styled';
 
 const FriendsProfile = () => {
     return (
-        // <Box sx={{ flexGrow: 1 }}>
-        //          <Grid container border={3}>
-        //             <Grid  xs={3} >
-        //                 <img src={avatar} alt='user avatar' width='200px' height='200px'></img>
-        //             </Grid>
-        //             <Grid item xs={3}>
-        //                 <p>Username generated here</p>
-        //                 <p>Favorite Genre here</p>
-        //             </Grid>
-        //         </Grid> 
-        
-        //     </Box>
 <CardCoontainer>
     <Avatar  sx={{ width: 200, height: 200 }}>
-                put a image tag here and import image
+    <img src={avatar} alt='user avatar' width='200px' height='200px'/>
     </Avatar>
         <DetailsContainer>
-            <Username>Import Username</Username>
-            <FavoriteGenre>Import Favorite Genre</FavoriteGenre>
-            <Bio>Import Bio</Bio>
+            <Username><a>GlitterPokadotQueen</a></Username>
+            <FavoriteGenre>Does Dirty Dancing Count As A Genre?</FavoriteGenre>
+            <Bio>I brake for birds. I rock a lot of polka dots. I have touched glitter in the past twenty four hours. I spend my entire day talking to children. And I find it fundamentally strange that you’re not a dessert person. That’s just weird and it freaks me out. And I’m sorry I don’t talk like Murphy Brown and I hate your pantsuit, I wish it had ribbons on it or something to make it just slightly cuter. And that doesn’t mean I’m not smart and tough and strong. And I know you like Nick, I’m not trying to interfere, but if you’d just talk to him about it… I’m almost done. I’m about to go and pay this eight hundred dollar fine, and my checks have baby farm animals on them, bitch.
+                <br/>
+                ~Jess, New Girl </Bio>
                 <ButtonsContainer>
                     <AddFriendButton>Add Friend</AddFriendButton>
                     <RemoveFriendButton>Remove Friend</RemoveFriendButton>
@@ -41,18 +31,20 @@ display: flex;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 80vw;
 `
 const DetailsContainer = styled.div`
 display: flex;
 flex-direction: column;
+margin-left: 20px;
 `
 
-const Username = styled.h2`
+const Username = styled.h4`
 font-size: 24px;
 font-weight: bold;
-margin-bottom: 8px;
 `
-const FavoriteGenre = styled.h3`
+const FavoriteGenre = styled.h5`
 font-size: 16px;
 `
 const Bio = styled.p`
@@ -68,22 +60,15 @@ border-radius: 500px;
 transition-property: background-color,border-color,color,box-shadow,filter;
 transition-duration: .3s;
 border: 1px solid transparent;
-letter-spacing: 2px;
 min-width: 160px;
 text-transform: uppercase;
 white-space: normal;
-font-weight: 700;
 text-align: center;
-padding: 17px 48px;
-color: #fff;
-background-color: #1ED760;
 height: 48px;
 :hover{
     transform: scale(1.04);
-    background-color: #21e065;
+    background-color: #1e0876;
 }
-
-font-size: 24px;
 font-weight: bold;
 color: white;
 background-color: #0077ff;
@@ -98,27 +83,24 @@ border-radius: 500px;
 transition-property: background-color,border-color,color,box-shadow,filter;
 transition-duration: .3s;
 border: 1px solid transparent;
-letter-spacing: 2px;
 min-width: 160px;
 text-transform: uppercase;
 white-space: normal;
-font-weight: 700;
 text-align: center;
 padding: 17px 48px;
-color: #fff;
 background-color: #1ED760;
 height: 48px;
 :hover{
     transform: scale(1.04);
-    background-color: #21e065;
+    background-color: #000000;
 }
-font-size: 24px;
 font-weight: bold;
-background-color: #1e0876;
+background-color: #4a4a4a;
 color: white;
 `
 const ButtonsContainer = styled.div`
 display: flex;
 flex-direction: row;
 `
+
 export default FriendsProfile;
