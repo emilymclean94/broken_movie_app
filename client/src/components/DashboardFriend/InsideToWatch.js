@@ -27,7 +27,8 @@ const MovieContainer = styled.div`
 
 `
 const MoviePoster = styled.img`
-
+height: 24rem;
+width: 14rem;
 `
 
 const MovieTitle = styled.h3`

@@ -7,7 +7,7 @@ const AddToWatched = () => {
 
   const handleAddWatched = ({id, title, poster_path}) => {
     const newWatched = <WatchedContainer key={watchedList.length}>
-                          <WatchedPosterstyle={{ width: '14rem' }} src={API_IMG + poster_path} alt="movie poster" />
+                          <WatchedPoster style={{ width: '14rem' }} src={API_IMG + poster_path} alt="movie poster" />
                           <WatchedTitle>{title}</WatchedTitle>
                           <WatchedRating>Watched Rating</WatchedRating>
                           <AddToMyToWatch/>
@@ -25,6 +25,8 @@ const WatchedContainer = styled.div`
 
 `
 const WatchedPoster = styled.img`
+height: 24rem;
+width: 14rem;
 `
 const WatchedTitle = styled.h3`
 `

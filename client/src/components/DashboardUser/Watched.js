@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Avatar4 from '../Assets/AvatarImages/Avatar4.png';
+const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 const Rate = (id) => {
   const [MyWatchedList, setMyWatchedList] = useState([]);

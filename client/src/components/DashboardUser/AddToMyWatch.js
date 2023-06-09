@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Rate from './Watched';
-import Rating from '@mui/material/Rating';
-
-
+// import Rate from './Watched';
+// import Rating from '@mui/material/Rating';
+// import Box from '@mui/material/Box';
+// import StarIcon from '@mui/icons-material/Star';
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
+
+
 
 
 
@@ -14,9 +16,9 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
   const handleAddMovie = (event, id) => {
     const newMovie = (
       <MovieContainer key={myMovieList.length}>
-        <MoviePoster style={{ width: '14rem' }} src={API_IMG + poster_path} alt="movie poster" />
+        <MoviePoster src={API_IMG + poster_path} alt="movie poster" />
         <MovieTitle>{title}</MovieTitle>
-        <Rating
+        {/* <Rating
             name="hover-feedback"
             value={value}
             precision={0.5}
@@ -33,7 +35,7 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
           {value !== null && (
             <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
           )}
-        <Rate />
+        <Rate /> */}
       </MovieContainer>
     );
 
@@ -50,7 +52,9 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
 
 
 const MovieContainer = styled.div``;
-const MoviePoster = styled.img``;
+const MoviePoster = styled.img`
+height: 24rem;
+width: 14rem;`;
 const MovieTitle = styled.h3``;
 
 
