@@ -4,7 +4,7 @@ import './Home.css';
 
 const Scroll1 = () => {
     return (
-        <div ClassName="fade">
+        <div className="fade">
             <h1 className="one">Love Movies?</h1>
             <Fade  left effectOut="fadeOutTop">  
             <h1>Love Raiting Them?</h1>
