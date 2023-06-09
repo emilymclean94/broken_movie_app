@@ -10,13 +10,10 @@ import Login from "../src/components/ModalsPages/LoginModal";
 import SignUp from "./components/ModalsPages/SignUpModal";
 import Feed from "./pages/Feed";
 import MyDashboard from "./pages/MyDashboard";
-import MovieSearch from "./pages/MovieSearch";
+// import MovieSearch from "./pages/MovieSearch";
 // import FriendDashboard from "./pages/FriendDashboard";
 // import UserProfile from "./components/DashboardUser/UserProfile";
 import Auth from './utils/auth';
-
-import Homex from "./pages/Homex";
-import Swap from "./pages/Swap";
 
 const fontUrl = `@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap");`;
 
@@ -107,8 +104,6 @@ function App() {
             <Route path="/mydashboard" element={<MyDashboard />} />
             {/* <Route path="/moviesearch" element={<MovieSearch />} /> */}
 
-            <Route path="/homex" element={<Homex />} />
-            <Route path="/swap" element={<Swap />} />
             
           </Routes>
         </Router>

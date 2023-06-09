@@ -1,14 +1,8 @@
 import React from "react";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 // import ToWatch from "./ToWatch";
 // import Rated from "./Rated";
 
-const MyWatchedContainer = styled.div`
-`
-const MyToWatchContainer = styled.div`
-`
-const Titles = styled.h6`
-`
 
 const MyLists = () => {
     return (
