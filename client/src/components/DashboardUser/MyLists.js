@@ -4,7 +4,7 @@ import ToWatch from './ToWatch';
 import Rated from './Rated';
 
 
-const MyWatchLists = () => {
+const MyLists = () => {
     return (
         <div> 
             <MyToWatchContainer>   
@@ -25,4 +25,4 @@ const MyWatchLists = () => {
     `
     const Titles = styled.h6`
     `
-export default MyWatchLists;
+export default MyLists;
