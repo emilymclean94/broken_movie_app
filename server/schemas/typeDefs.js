@@ -29,7 +29,6 @@ const typeDefs = gql`
     createdAt: String
 }
 
-
 type movieInput {
     _id: ID
     posterImg: String
@@ -39,6 +38,7 @@ type movieInput {
     rating: String
     updatedAt: String
 }
+
 
 type Auth {
   token: ID!
@@ -60,6 +60,7 @@ type Auth {
     addUser(firstname: String!, username: String!,email: String!, password: String!, genre: String, bio: String): Auth
     addMovie(username: String!): User
     removeMovie(movieId: ID!): User
+    addFriend(friendId: ID!): User
 }
 `;
 
