@@ -67,6 +67,19 @@ const resolvers = {
         removeMovie: async (parent, { movieId }) => {
           return Movie.findOneAndDelete({ _id: movieId });
         },
+        addFriend: async (parent, {friendId}, context) => {
+          if (!context.user){
+            throw new AuthenticationError('No user found with this username');
+          }
+          const currentUser = await User.findById(context.user._id);
+          const friendUser= await User.findById(friendId);
+          if (!friendUser) {
+            throw new UserInputError('Friend user not found!');
+          }
+          currentUser.friends.push(friendUser);
+          await currentUser.save();
+          return currentUser;
+        },
       
       },
 };
