@@ -2,15 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
 import { useMutation } from "@apollo/client";
 import { ADD_MOVIE } from '../../utils/mutations';
-import { searchTMDB } from '../../'
+import { searchTMDB } from '../../utils/apiQuery'
 import { saveMovieIds, getSavedMovieIds } from '../../utils/localStorage';
 
 const SearchMovies = () => {
-
-//! Below export was in a separate API.js in the utils folder for making an api query -- not sure if this is how we need to do it but it's an idea
-// export const searchGoogleBooks = (query) => {
-//     return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-//   };
 
 //! Refactored from google books homework/github example 
     // create state for holding returned api data
@@ -37,8 +32,7 @@ const SearchMovies = () => {
         }
     
         try {
-    //! Change to search TMDB & bring in search tmdb 
-          const response = await searchGooglemovies(searchInput);
+          const response = await searchTMDB(searchInput);
     
           if (!response.ok) {
             throw new Error("something went wrong!");
@@ -51,7 +45,7 @@ const SearchMovies = () => {
             movieId: movie.id,
             posterImg: movie.imageLinks?.thumbnail || "",
             title: movie.title,
-            description: movie.volumeInfo.description,
+            description: movie.description,
             releaseDate: movie.releaseDate,
           }));
     
@@ -61,7 +55,9 @@ const SearchMovies = () => {
           console.error(err);
         }
       };
-    
+
+
+    //! Handle add movie
       // create function to handle saving a movie to our database
       const handleSaveMovie = async (movieId) => {
         // find the movie in `searchedmovies` state by the matching id
