@@ -1,11 +1,10 @@
 import React from 'react';
 import NavBar from '../components/NavBars/NavBar';
+import Footer from '../components/NavBars/Footer';
 import UserProfile from '../components/DashboardUser/UserProfile';
 // import SearchBar from '../components/DashboardUser/MovieSearch';
 // import SearchResults from '../components/DashboardUser/MovieResults';
-import Rated from '../components/DashboardUser/Rated';
-import MyWatched from '../components/DashboardUser/MyWatched';
-import Footer from '../components/NavBars/Footer';
+import MyLists from '../components/DashboardUser/MyLists';
 
 const MyDashboard = () => {
    
@@ -15,8 +14,7 @@ const MyDashboard = () => {
             <UserProfile/>
             {/* <SearchBar />
             <SearchResults /> */}
-            <Rated />
-            <MyWatched />
+            <MyLists/>
             <Footer />
         </>
     );
