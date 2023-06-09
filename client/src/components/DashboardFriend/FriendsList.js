@@ -5,23 +5,36 @@ import FriendsWatched from './FriendsWatched';
 
 const FriendsList = () => {
       return (
-    <div>
-      <FriendsToWatchContainer>
-        <h1>To Watch</h1>
+    <FriendsListsContainer>
+      <FriendsMoviesContainer>
+        <Title>To Watch</Title>
         <FriendsToWatch/>
-      </FriendsToWatchContainer>
+      </FriendsMoviesContainer>
 
-      <FriendsWatchedContainer>
-        <h1>Watched</h1>
+      <FriendsMoviesContainer>
+        <Title>Watched</Title>
         <FriendsWatched/>
-      </FriendsWatchedContainer>
-    </div>
+      </FriendsMoviesContainer>
+    </FriendsListsContainer>
       );
     };
-    const FriendsToWatchContainer = styled.div`
-
+    const FriendsMoviesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
     `
-    const FriendsWatchedContainer = styled.div`
+    const FriendsListsContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
     `
-
+    const Title = styled.h6`
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    `
 export default FriendsList;
