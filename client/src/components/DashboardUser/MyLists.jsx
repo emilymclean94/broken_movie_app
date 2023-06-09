@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import ToWatch from "./ToWatch";
 import Rated from "./Rated";
 
-const MyWatchedContainer = styled.My`
+const MyWatchedContainer = styled.div`
 `
 const MyToWatchContainer = styled.div`
 `
