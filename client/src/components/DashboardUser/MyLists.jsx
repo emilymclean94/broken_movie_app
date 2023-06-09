@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import ToWatch from "./ToWatch";
-import Rated from "./Rated";
+// import ToWatch from "./ToWatch";
+// import Rated from "./Rated";
 
 const MyWatchedContainer = styled.div`
 `
@@ -15,12 +15,12 @@ const MyLists = () => {
         <div> 
             <MyToWatchContainer>   
                 <Titles>To Watch</Titles>
-                <ToWatch/>  
+                {/* <ToWatch/>   */}
             </MyToWatchContainer>
 
             <MyWatchedContainer>
                 <Titles>Rated</Titles>
-                <Rated/>
+                {/* <Rated/> */}
             </MyWatchedContainer>
 </div>
       );
