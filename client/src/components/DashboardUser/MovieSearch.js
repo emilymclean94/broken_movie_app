@@ -2,18 +2,75 @@ import React, { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
 import { useMutation } from "@apollo/client";
 import { ADD_MOVIE } from '../../utils/mutations';
+import { searchTMDB } from '../../'
 
-const SearchBar = () => {
+const SearchMovies = () => {
+
+//! Refactored from google books homework/github example 
     // create state for holding returned api data
     const [searchedMovies, setSearchedMovies] = useState([]);
 
     // create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
 
-    // create state to hold saved bookId values
+    // create state to hold saved movieId values
     const [savedMovieIds, setSavedMovieIds] = useState(getSavedMovieIds());
 
     const [saveMovie] = useMutation(ADD_MOVIE);
+
+    useEffect(() => {
+        return () => saveMovieIds(savedMovieIds);
+      });
+    
+      // create method to search for movies and set state on form submit
+      const handleFormSubmit = async (event) => {
+        event.preventDefault();
+    
+        if (!searchInput) {
+          return false;
+        }
+    
+        try {
+    //! Change to search TMDB & bring in search tmdb 
+          const response = await searchGooglemovies(searchInput);
+    
+          if (!response.ok) {
+            throw new Error("something went wrong!");
+          }
+    
+          const { items } = await response.json();
+    
+    //! Double check this map function (DATA MIXED WITH GOOGLE BOOK STUFF) - is this mapping over the api data we pulled?
+          const movieData = items.map((movie) => ({
+            movieId: movie.id,
+            posterImg: movie.imageLinks?.thumbnail || "",
+            title: movie.title,
+            description: movie.volumeInfo.description,
+            releaseDate: movie.releaseDate,
+          }));
+    
+          setSearchedMovies(movieData);
+          setSearchInput("");
+        } catch (err) {
+          console.error(err);
+        }
+      };
+    
+      // create function to handle saving a movie to our database
+      const handleSaveMovie = async (movieId) => {
+        // find the movie in `searchedmovies` state by the matching id
+        const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
+    
+        try {
+          await saveMovie({ variables: { input: movieToSave } });
+    
+          // if movie successfully saves to user's account, save movie id to state
+          setSavedMovieIds([...savedMovieIds, movieToSave.movieId]);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+//! Refactor ends here
 
 
     return (
@@ -35,4 +92,4 @@ const SearchBar = () => {
     );
 };
 
-export default SearchBar;
+export default SearchMovies;
