@@ -16,7 +16,7 @@ const typeDefs = gql`
     bio: String
     myList:[Movie]
     watched: [Movie]
-    friends: String
+    friends: [User]
   }
 
   type Movie {
