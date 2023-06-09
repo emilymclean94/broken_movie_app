@@ -1,29 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+// import Rate from './Watched';
 // import Rating from '@mui/material/Rating';
 // import Box from '@mui/material/Box';
 // import StarIcon from '@mui/icons-material/Star';
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 
-
-
-
 const ToWatch = ({ title, poster_path, id }) => {
-//  return and map over the div you created
-//  pull information from data base
-//onclick function that stores your rating into the data base(add ratings to database) the labels are the values i want to pull and store also for the watched div so please include those <3
+  const [myMovieList, setMovieList] = useState([]);
 
-
-  return (
-    <div>
-    {searchResults.map((result) => (
-<MovieContainer key={myMovieList.length}>
+  const handleAddMovie = (event, id) => {
+    const newMovie = (
+      <MovieContainer key={myMovieList.length}>
         <MoviePoster src={API_IMG + poster_path} alt="movie poster" />
         <MovieTitle>{title}</MovieTitle>
         {/* <Rating
             name="hover-feedback"
-            value={rating}
+            value={value}
             precision={0.5}
             getLabelText={getLabelText}
             onChange={(event, newValue) => {
@@ -37,23 +31,31 @@ const ToWatch = ({ title, poster_path, id }) => {
         />
           {value !== null && (
             <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-          )} */}
-        
-<button onClick={handleAddMyWatched(id)}>Rate</button>
+          )}
+        <Rate /> */}
       </MovieContainer>
-      ))}
- </div> );
+    );
+
+    setMovieList((prevMovieList) => [...prevMovieList, newMovie]);
+  };
+
+  return (
+    <div>
+      <button onClick={handleAddMovie(id)}>Add to List</button>
+    </div>
+  );
 };
 
+const MovieContainer = styled.div`
+`;
 
-const MovieContainer = styled.div``;
 const MoviePoster = styled.img`
 height: 24rem;
-width: 14rem;`;
-const MovieTitle = styled.h3``;
+width: 14rem;
+`;
 
+const MovieTitle = styled.h3`
+`;
 
 export default ToWatch;
 
-
-// button to add the movie can be used on both movie lists in friends and on the result movie divs

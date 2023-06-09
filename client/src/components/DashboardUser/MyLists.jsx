@@ -1,8 +1,14 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import ToWatch from './ToWatch';
-import Rated from './Rated';
+import React from "react";
+import styled from "@emotion/styled";
+import ToWatch from "./ToWatch";
+import Rated from "./Rated";
 
+const MyWatchedContainer = styled.My`
+`
+const MyToWatchContainer = styled.div`
+`
+const Titles = styled.h6`
+`
 
 const MyLists = () => {
     return (
@@ -19,10 +25,5 @@ const MyLists = () => {
 </div>
       );
     };
-    const MyWatchedContainer = styled.My`
-    `
-    const MyToWatchContainer = styled.div`
-    `
-    const Titles = styled.h6`
-    `
+
 export default MyLists;
