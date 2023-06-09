@@ -39,3 +39,43 @@ export const ADD_MOVIE = gql`
   }
 `;
 
+export const ADD_FRIEND = gql`
+  mutation AddFriend($friendId: ID!) {
+    addFriend(friendId: $friendId) {
+      _id
+      firstname
+      username
+      avatar
+      email
+      genre
+      bio
+      myList {
+        _id
+        posterImg
+        title
+        releaseDate
+        description
+        rating
+        createdAt
+      }
+      watched {
+        _id
+        posterImg
+        title
+        releaseDate
+        description
+        rating
+        createdAt
+      }
+      friends {
+        _id
+        firstname
+        username
+        avatar
+        email
+        genre
+        bio
+      }
+    }
+  }
+`;
