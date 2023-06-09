@@ -66,10 +66,10 @@ const SearchMovies = () => {
       const handleSaveMovie = async (movieId) => {
         // find the movie in `searchedmovies` state by the matching id
         const movieToSave = searchedMovies.find((movie) => movie.movieId === movieId);
-    
+        
         try {
           await saveMovie({ variables: { input: movieToSave } });
-    
+          
           // if movie successfully saves to user's account, save movie id to state
           setSavedMovieIds([...savedMovieIds, movieToSave.movieId]);
         } catch (err) {

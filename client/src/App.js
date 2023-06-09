@@ -11,7 +11,7 @@ import SignUp from "./components/ModalsPages/SignUpModal";
 import Feed from "./pages/Feed";
 import MyDashboard from "./pages/MyDashboard";
 import MovieSearch from "./pages/MovieSearch";
-// import FriendDashboard from "./pages/FriendDashboard";
+import FriendDashboard from "./pages/FriendDashboard";
 // import UserProfile from "./components/DashboardUser/UserProfile";
 import Auth from './utils/auth';
 
@@ -100,7 +100,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/feed" element={<Feed />} />
-            {/* <Route path="/yourdashboard" element={<FriendDashboard />} /> */}
+            <Route path="/yourdashboard" element={<FriendDashboard />} />
             <Route path="/me" element={<MyDashboard />} />
             <Route path="/mydashboard" element={<MyDashboard />} />
             <Route path="/moviesearch" element={<MovieSearch />} />

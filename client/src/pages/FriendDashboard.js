@@ -1,8 +1,8 @@
 import React from 'react';
-// import NavBar from '../components/NavBars/NavBar'
+import NavBar from '../components/NavBars/NavBar';
 import FriendsProfile from '../components/DashboardFriend/FriendsProfile';
-import FriendsToWatch from '../components/DashboardFriend/FriendsToWatch';
-import FriendsWatchedList from '../components/DashboardFriend/FriendsWatchedList';
+// import FriendsToWatch from '../components/DashboardFriend/FriendsToWatch';
+// import FriendsWatchedList from '../components/DashboardFriend/FriendsWatchedList';
 import Footer from '../components/NavBars/Footer';
 
 
@@ -10,7 +10,7 @@ import Footer from '../components/NavBars/Footer';
 const FriendDashboard = () => {
     return (
         <div>
-            {/* <NavBar /> */}
+            <NavBar />
 
             <div>
                 <h1>Testing friends dashboard</h1>
@@ -18,8 +18,8 @@ const FriendDashboard = () => {
             
 
             <FriendsProfile />
-            <FriendsToWatch />
-            <FriendsWatchedList />
+            {/* <FriendsToWatch /> */}
+            {/* <FriendsWatchedList /> */}
             <Footer />
         </div>
     );

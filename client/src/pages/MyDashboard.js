@@ -15,8 +15,8 @@ const MyDashboard = () => {
             <UserProfile/>
             {/* <SearchBar />
             <SearchResults /> */}
-            <Rate />
-            <MyWatchedList />
+            {/* <Rate />
+            <MyWatchedList /> */}
             <Footer />
         </>
     );

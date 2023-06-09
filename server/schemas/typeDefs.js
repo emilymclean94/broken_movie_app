@@ -29,17 +29,6 @@ const typeDefs = gql`
     createdAt: String
 }
 
-
-type movieInput {
-    _id: ID
-    posterImg: String
-    title: String
-    releaseDate: String
-    description: String
-    rating: String
-    updatedAt: String
-}
-
 type Auth {
   token: ID!
   user: User
@@ -58,7 +47,7 @@ type Auth {
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(firstname: String!, username: String!,email: String!, password: String!, genre: String, bio: String): Auth
-    addMovie(username: String!): User
+    addMovie(username: String!): Movie
     removeMovie(movieId: ID!): User
 }
 `;

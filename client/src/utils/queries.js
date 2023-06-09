@@ -73,7 +73,6 @@ export const QUERY_MOVIES = gql`
         title
         releaseDate
         description
-        rated
     }
   }
 `;
@@ -86,7 +85,6 @@ export const QUERY_SINGLE_MOVIE = gql`
         title
         releaseDate
         description
-        rated
     }
   }
 `;

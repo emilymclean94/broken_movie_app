@@ -16,10 +16,10 @@ const resolvers = {
           },
           movies: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Movie.find({});
+            return Movie.find(params);
           },
-          movie: async (parent) => {
-            return Movie.find(); 
+          movie: async (parent, { movieId }) => {
+            return Movie.find({ _id: movieId }); 
           },
           me: async (parent, args, context) => {
             if (context.user) {
@@ -54,15 +54,23 @@ const resolvers = {
           return { token, user };
         },
         
-        addMovie: async (parent, { username }) => {
-          const movie = await Movie.create({ posterImg, title, releaseDate, description, rating, updatedAt });
+        addMovie: async (parent, { posterImg, description, title, releaseDate }, context) => {
+          if (context.user) {
+            const movie = await Movie.create({
+              posterImg,
+              description,
+              title,
+              releaseDate,
+            });
     
-          await User.findOneAndUpdate(
-            { username },
-            { $addToSet: { watched: movieId } }
-          );
+            await User.findOneAndUpdate(
+              { username: context.user.username },
+              { $addToSet: { myList: movie._id } }
+            );
     
-          return thought;
+            return movie;
+          }
+          throw new AuthenticationError('You need to be logged in!');
         },
         removeMovie: async (parent, { movieId }) => {
           return Movie.findOneAndDelete({ _id: movieId });
