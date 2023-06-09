@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import AddToMyWatch from './AddToMyWatch';
-import MyWatchedList from './Watched';
+import AddToMyToWatch from './AddToMyWatch';
+import Rated from './Watched';
 
 
 const MyWatchLists = () => {
@@ -9,12 +9,12 @@ const MyWatchLists = () => {
 <div>    
     <DashBoardTitles>To Watch</DashBoardTitles>
     <MyToWatchContainer>
-            <AddToMyWatch />
+        <AddToMyToWatch/>  
     </MyToWatchContainer>
 
     <DashBoardTitles>Rated</DashBoardTitles>
     <MyWatchedContainer>
-            {MyWatchedList}
+        <Rated/>
     </MyWatchedContainer>
 
 

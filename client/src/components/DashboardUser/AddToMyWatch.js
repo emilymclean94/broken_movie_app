@@ -17,6 +17,8 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
 
 
   return (
+    <div>
+    {searchResults.map((result) => (
 <MovieContainer key={myMovieList.length}>
         <MoviePoster src={API_IMG + poster_path} alt="movie poster" />
         <MovieTitle>{title}</MovieTitle>
@@ -40,7 +42,8 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
         
 <button onClick={handleAddMyWatched(id)}>Rate</button> */}
       </MovieContainer>
-  );
+      ))}
+ </div> );
 };
 
 
