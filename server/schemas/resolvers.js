@@ -53,6 +53,7 @@ const resolvers = {
     
           return { token, user };
         },
+        
         addMovie: async (parent, { username }) => {
           const movie = await Movie.create({ posterImg, title, releaseDate, description, rating, updatedAt });
     

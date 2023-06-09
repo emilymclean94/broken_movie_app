@@ -33,19 +33,19 @@ align-items: right;
 `
 const Hero = () => {
 
-
     return (
-<Container >
-<Grid container rowSpacing ={2} columnSpacing={10}>
-    <Grid item container xs={6}>
-    <IMG src={blue} className="col" alt="cool" />
-    </Grid>
-    <Grid row item xs={1} sm={3}>
-    <SubTitle >INTO THE</SubTitle>
-    <Title >STREAMVERSE</Title>
-    </Grid>
-    </Grid>
-</Container>
+        <Container >
+            <Grid container rowSpacing={2} columnSpacing={10}>
+                <Grid item container xs={6}>
+                    <IMG src={blue} className="col" alt="cool" />
+                </Grid>
+                <Grid row item xs={1} sm={3}>
+                    <SubTitle >INTO THE</SubTitle>
+                    <Title >STREAMVERSE</Title>
+                </Grid>
+            </Grid>
+        </Container>
     );
 }
+
 export default Hero;
