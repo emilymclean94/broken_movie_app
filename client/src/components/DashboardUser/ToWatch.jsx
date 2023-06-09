@@ -7,9 +7,6 @@ import styled from '@emotion/styled';
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 
-
-
-
 const ToWatch = ({ title, poster_path, id }) => {
   const [myMovieList, setMovieList] = useState([]);
 
@@ -42,7 +39,6 @@ const ToWatch = ({ title, poster_path, id }) => {
     setMovieList((prevMovieList) => [...prevMovieList, newMovie]);
   };
 
-
   return (
     <div>
       <button onClick={handleAddMovie(id)}>Add to List</button>
@@ -50,15 +46,16 @@ const ToWatch = ({ title, poster_path, id }) => {
   );
 };
 
+const MovieContainer = styled.div`
+`;
 
-const MovieContainer = styled.div``;
 const MoviePoster = styled.img`
 height: 24rem;
-width: 14rem;`;
-const MovieTitle = styled.h3``;
+width: 14rem;
+`;
 
+const MovieTitle = styled.h3`
+`;
 
 export default ToWatch;
 
-
-// button to add the movie can be used on both movie lists in friends and on the result movie divs

@@ -37,18 +37,23 @@ const MyWatched = (id) => {
 
 const DeleteMovieButton = styled.button`
 
-`
+`;
+
 const MyWatchedContainer = styled.div`
 
-`
+`;
+
 const Poster = styled.img`
 height: 24rem;
 width: 14rem;
-`
+`;
+
 const Title = styled.h3`
 
-`
+`;
+
 const MyRaiting = styled.p`
 
-`
+`;
+
 export default MyWatched;
