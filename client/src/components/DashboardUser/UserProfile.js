@@ -6,16 +6,16 @@ import avatar from '../Assets/AvatarImages/Avatar2.png';
 import Auth from '../../utils/auth';
 import { Avatar } from '@mui/material';
 import styled from '@emotion/styled';
-import { Box, Grid } from '@mui/material';
+// import { Box, Grid } from '@mui/material';
 
 
 
 const UserProfile = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
-  });
+  }); //loading was next to data
 
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
