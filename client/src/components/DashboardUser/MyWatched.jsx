@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Avatar4 from '../Assets/AvatarImages/Avatar4.png';
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
-const Rate = (id) => {
+const MyWatched = (id) => {
   const [MyWatchedList, setMyWatchedList] = useState([]);
 
   const handleAddMyWatched = ({ id,title,poster_path}) => {
@@ -28,7 +28,8 @@ const Rate = (id) => {
         <DeleteMovieButton>Delete</DeleteMovieButton>
     </MyWatchedContainer>
 
-      <button onClick={handleAddMyWatched(id)}>Rate</button>
+    <button onClick={() => handleAddMyWatched(id)}>Rate</button>
+    
     </div>
   );
 };
@@ -50,4 +51,4 @@ const Title = styled.h3`
 const MyRaiting = styled.p`
 
 `
-export default Rate;
+export default MyWatched;

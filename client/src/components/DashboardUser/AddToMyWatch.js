@@ -10,7 +10,7 @@ const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 
 
-const AddToMyToWatch = ({ title, poster_path, id }) => {
+const ToWatch = ({ title, poster_path, id }) => {
   const [myMovieList, setMovieList] = useState([]);
 
   const handleAddMovie = (event, id) => {
@@ -58,7 +58,7 @@ width: 14rem;`;
 const MovieTitle = styled.h3``;
 
 
-export default AddToMyToWatch;
+export default ToWatch;
 
 
 // button to add the movie can be used on both movie lists in friends and on the result movie divs

@@ -15,6 +15,9 @@ import MovieSearch from "./pages/MovieSearch";
 // import UserProfile from "./components/DashboardUser/UserProfile";
 import Auth from './utils/auth';
 
+import Homex from "./pages/Homex";
+import Swap from "./pages/Swap";
+
 const fontUrl = `@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap");`;
 
 const AppTheme = createTheme({
@@ -101,9 +104,12 @@ function App() {
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/feed" element={<Feed />} />
             {/* <Route path="/yourdashboard" element={<FriendDashboard />} /> */}
-            <Route path="/me" element={<MyDashboard />} />
             <Route path="/mydashboard" element={<MyDashboard />} />
             <Route path="/moviesearch" element={<MovieSearch />} />
+
+            <Route path="/homex" element={<Homex />} />
+            <Route path="/swap" element={<Swap />} />
+            
           </Routes>
         </Router>
       </ApolloProvider>
