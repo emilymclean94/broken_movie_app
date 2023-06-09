@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import AddToMyWatch from './AddToMyWatch';
-import MyWatchedList from './Watched';
+import ToWatch from './ToWatch';
+import Rated from './Rated';
 
 
-const MyWatchLists = () => {
+const MyLists = () => {
     return (
-<div>    
-    <DashBoardTitles>To Watch</DashBoardTitles>
-    <MyToWatchContainer>
-            <AddToMyWatch />
-    </MyToWatchContainer>
+        <div> 
+            <MyToWatchContainer>   
+                <Titles>To Watch</Titles>
+                <ToWatch/>  
+            </MyToWatchContainer>
 
-    <DashBoardTitles>Rated</DashBoardTitles>
-    <MyWatchedContainer>
-            {MyWatchedList}
-    </MyWatchedContainer>
-
-
+            <MyWatchedContainer>
+                <Titles>Rated</Titles>
+                <Rated/>
+            </MyWatchedContainer>
 </div>
       );
     };
@@ -25,6 +23,6 @@ const MyWatchLists = () => {
     `
     const MyToWatchContainer = styled.div`
     `
-    const DashBoardTitles = styled.h6`
+    const Titles = styled.h6`
     `
-export default MyWatchLists;
+export default MyLists;

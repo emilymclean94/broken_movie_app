@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-// import Rate from './Watched';
 // import Rating from '@mui/material/Rating';
 // import Box from '@mui/material/Box';
 // import StarIcon from '@mui/icons-material/Star';
@@ -10,19 +9,21 @@ const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 
 
-const AddToMyToWatch = ({ title, poster_path, id }) => {
+const ToWatch = ({ title, poster_path, id }) => {
 //  return and map over the div you created
 //  pull information from data base
-//onclick function that stores your rating into the data base(add ratings to database)
+//onclick function that stores your rating into the data base(add ratings to database) the labels are the values i want to pull and store also for the watched div so please include those <3
 
 
   return (
+    <div>
+    {searchResults.map((result) => (
 <MovieContainer key={myMovieList.length}>
         <MoviePoster src={API_IMG + poster_path} alt="movie poster" />
         <MovieTitle>{title}</MovieTitle>
         {/* <Rating
             name="hover-feedback"
-            value={value}
+            value={rating}
             precision={0.5}
             getLabelText={getLabelText}
             onChange={(event, newValue) => {
@@ -36,11 +37,12 @@ const AddToMyToWatch = ({ title, poster_path, id }) => {
         />
           {value !== null && (
             <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-          )}
+          )} */}
         
-<button onClick={handleAddMyWatched(id)}>Rate</button> */}
+<button onClick={handleAddMyWatched(id)}>Rate</button>
       </MovieContainer>
-  );
+      ))}
+ </div> );
 };
 
 
@@ -51,7 +53,7 @@ width: 14rem;`;
 const MovieTitle = styled.h3``;
 
 
-export default AddToMyToWatch;
+export default ToWatch;
 
 
 // button to add the movie can be used on both movie lists in friends and on the result movie divs

@@ -1,8 +1,7 @@
 import React from 'react';
 // import NavBar from '../components/NavBars/NavBar'
 import FriendsProfile from '../components/DashboardFriend/FriendsProfile';
-import FriendsToWatch from '../components/DashboardFriend/FriendsToWatch';
-import FriendsWatchedList from '../components/DashboardFriend/FriendsWatchedList';
+import FriendsList from '../components/DashboardFriend/FriendsList';
 import Footer from '../components/NavBars/Footer';
 
 
@@ -18,8 +17,7 @@ const FriendDashboard = () => {
             
 
             <FriendsProfile />
-            <FriendsToWatch />
-            <FriendsWatchedList />
+            <FriendsList />
             <Footer />
         </div>
     );
