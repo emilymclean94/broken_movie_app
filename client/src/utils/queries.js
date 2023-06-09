@@ -40,7 +40,12 @@ query me {
     email
     genre
     bio
-    friends
+    friends {
+      _id
+      username
+      firstname
+      email
+    }
     myList {
       _id
       posterImg

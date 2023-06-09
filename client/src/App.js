@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import "./App.css";
 import Home from "./pages/Home";
 import Login from "../src/components/ModalsPages/LoginModal";
@@ -11,12 +11,31 @@ import MyDashboard from "./pages/MyDashboard";
 import MovieSearch from "./pages/MovieSearch";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import ResponsiveTheme from "./theme";
+import { setContext } from '@apollo/client/link/context';
+import Auth from './utils/auth';
 
+
+const httpLink = createHttpLink({
+  uri: '/graphql', 
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = Auth.getToken();
+
+
+  return {
+    headers: {
+      ...headers,
+      Authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  uri: "/graphql",
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 // linearGradient(90deg, rgba(2,0,36,1) 0%, rgb(37, 37, 173) 35%, blue 100%)
 

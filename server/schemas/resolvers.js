@@ -12,18 +12,18 @@ const resolvers = {
           return await User.find() ;
           },
           user: async (parent, { username }) => {
-            return User.findOne({ username });
+            return User.findOne({ username: username });
           },
           movies: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Movie.find({});
           },
           movie: async (parent) => {
-            return Movie.find();
+            return Movie.find(); 
           },
           me: async (parent, args, context) => {
             if (context.user) {
-              return User.findOne({ _id: context.user._id }).populate('watched');
+              return User.findOne({ username: context.user.username}).populate('watched');
             }
             throw new AuthenticationError('You need to be logged in!');
           },
