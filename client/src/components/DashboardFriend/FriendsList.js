@@ -1,19 +1,20 @@
 import React from 'react';
-import movieList from './InsideToWatch';
-import watchedList from './InsideWatched';
+import FriendsToWatch from './FriendsToWatch';
+import FriendsWatched from './FriendsWatched';
 
 
-const FriendsToWatch = () => {
+const FriendsList = () => {
       return (
     <div>
-      <h1>To Watch</h1>
-        <FriendsToWatchContainer>
-          {movieList}
-        </FriendsToWatchContainer>
-      <h1>Watched</h1>
-        <FriendsWatchedContainer>
-        {watchedList}
-        </FriendsWatchedContainer>
+      <FriendsToWatchContainer>
+        <h1>To Watch</h1>
+        <FriendsToWatch/>
+      </FriendsToWatchContainer>
+
+      <FriendsWatchedContainer>
+        <h1>Watched</h1>
+        <FriendsWatched/>
+      </FriendsWatchedContainer>
     </div>
       );
     };
@@ -23,4 +24,4 @@ const FriendsToWatch = () => {
     const FriendsWatchedContainer = styled.div`
     `
 
-export default FriendsToWatch;
+export default FriendsList;
