@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-import Avatar4 from '../Assets/AvatarImages/Avatar4.png';
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 
 const Rated = ({id, title, poster_path}) => {
@@ -13,10 +12,7 @@ const Rated = ({id, title, poster_path}) => {
         <MyWatchedContainer key={MyWatchedList.length}>
           <Poster src={API_IMG + poster_path} alt="movie poster" />
           <Title>{title}</Title>
-            <RateContainer>
-              <Typography component="legend">(pull stored label if possible)if not i will scratch this label</Typography>
-              <Rating name="read-only" value={value} readOnly />
-            </RateContainer>
+          <Rating name="read-only" value={value} readOnly />
           <DeleteMovieButton>Delete</DeleteMovieButton>
         </MyWatchedContainer>
     ))}
@@ -24,9 +20,6 @@ const Rated = ({id, title, poster_path}) => {
   );
 };
 
-const RateContainer = styled.div`
-
-`
 const DeleteMovieButton = styled.button`
 
 `
@@ -38,9 +31,6 @@ height: 24rem;
 width: 14rem;
 `
 const Title = styled.h3`
-
-`
-const MyRaiting = styled.p`
 
 `
 export default Rated;
