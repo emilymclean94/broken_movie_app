@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import ToWatch from "./ToWatch";
-import Rated from "./Rated";
+// import ToWatch from "./ToWatch";
+// import Rated from "./Rated";
 
 const MyWatchedContainer = styled.div`
 `
@@ -13,7 +13,7 @@ const Titles = styled.h6`
 const MyLists = () => {
     return (
         <div> 
-            <MyToWatchContainer>   
+            {/* <MyToWatchContainer>   
                 <Titles>To Watch</Titles>
                 <ToWatch/>  
             </MyToWatchContainer>
@@ -21,7 +21,7 @@ const MyLists = () => {
             <MyWatchedContainer>
                 <Titles>Rated</Titles>
                 <Rated/>
-            </MyWatchedContainer>
+            </MyWatchedContainer> */}
 </div>
       );
     };
