@@ -4,8 +4,8 @@ import Footer from '../components/NavBars/Footer';
 import UserProfile from '../components/DashboardUser/UserProfile';
 // import SearchBar from '../components/DashboardUser/MovieSearch';
 // import SearchResults from '../components/DashboardUser/MovieResults';
-import MyToWatch from '../components/DashboardUser/MyToWatch';
-import MyWatchedList from '../components/DashboardUser/MyWatchedList';
+import Rate from '../components/DashboardUser/AddToMyWatch';
+import MyWatchedList from '../components/DashboardUser/Watched';
 
 const MyDashboard = () => {
    
@@ -15,7 +15,7 @@ const MyDashboard = () => {
             <UserProfile/>
             {/* <SearchBar />
             <SearchResults /> */}
-            <MyToWatch />
+            <Rate />
             <MyWatchedList />
             <Footer />
         </>

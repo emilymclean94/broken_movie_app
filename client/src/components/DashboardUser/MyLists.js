@@ -1,28 +1,26 @@
 import React from 'react';
-import AddToMyWatched from './Watched';
-import AddToMyToWatch from './InsideMyWatch';
-const API_IMG = 'https://image.tmdb.org/t/p/w500/';
+import styled from '@emotion/styled';
+import myMovieList from './AddToMyWatch';
+import MyWatchedList from './Watched';
+
 
 const MyWatchLists = () => {
     return (
 <div>    
+    <DashBoardTitles>To Watch</DashBoardTitles>
     <MyToWatchContainer>
-          <DashBoardTitles>To Watch</DashBoardTitles>
-            <AddToMyToWatch />
+            {myMovieList}
     </MyToWatchContainer>
 
+    <DashBoardTitles>Rated</DashBoardTitles>
     <MyWatchedContainer>
-        <DashBoardTitles>Rated</DashBoardTitles>
-
-        <DeleteMovie>Delete</DeleteMovie>
+            {MyWatchedList}
     </MyWatchedContainer>
 
 
 </div>
       );
     };
-    const DeleteMovie = styled.button`
-    `
     const MyWatchedContainer = styled.My`
     `
     const MyToWatchContainer = styled.div`

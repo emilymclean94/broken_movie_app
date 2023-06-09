@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import AddToMyToWatch from '../DashboardUser/AddToMyWatch';
 
 const AddToWatched = () => {
-  const [WatchedList, setWatchedList] = useState([]);
+  const [watchedList, setWatchedList] = useState([]);
 
-  const handleAddWatched = () => {
-    const newWatched = <WatchedContainer key={WatchedList.length}>
-                          <WatchedPoster>Watched poster</WatchedPoster>
-                          <WatchedTitle>Watched title</WatchedTitle>
+  const handleAddWatched = ({id, title, poster_path}) => {
+    const newWatched = <WatchedContainer key={watchedList.length}>
+                          <WatchedPosterstyle={{ width: '14rem' }} src={API_IMG + poster_path} alt="movie poster" />
+                          <WatchedTitle>{title}</WatchedTitle>
                           <WatchedRating>Watched Rating</WatchedRating>
+                          <AddToMyToWatch/>
                       </WatchedContainer>;
     setWatchedList((prevWatchedList) => [...prevWatchedList, newWatched]);
   };
@@ -16,7 +18,6 @@ const AddToWatched = () => {
   return (
     <div>
       <button onClick={handleAddWatched}>Add to Watched</button>
-      {movieList}
     </div>
   );
 };

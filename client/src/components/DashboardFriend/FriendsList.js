@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import AddToWatch from './InsideToWatch';
-const API_IMG = 'https://image.tmdb.org/t/p/w500/';
+import React from 'react';
+import movieList from './InsideToWatch';
+import watchedList from './InsideWatched';
 
 
 const FriendsToWatch = () => {
       return (
     <div>
+      <h1>To Watch</h1>
         <FriendsToWatchContainer>
-          <h1>To Watch</h1>
-          <AddToWatched />
+          {movieList}
         </FriendsToWatchContainer>
-
+      <h1>Watched</h1>
         <FriendsWatchedContainer>
-          <h1>Watched</h1>
+        {watchedList}
         </FriendsWatchedContainer>
     </div>
       );
