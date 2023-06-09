@@ -6,6 +6,7 @@ import avatar from '../Assets/AvatarImages/Avatar2.png';
 import Auth from '../../utils/auth';
 import { Avatar } from '@mui/material';
 import styled from '@emotion/styled';
+import { Box, Grid } from '@mui/material';
 
 
 
@@ -91,5 +92,3 @@ background-color: #0077ff;
     )
 }
 export default UserProfile;
-
-
