@@ -60,6 +60,12 @@ function NavBar() {
                 Friends
               </Button>
               <Button
+                onClick={() => window.location.assign('/moviesearch')}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              > 
+                Search Movies
+              </Button>
+              <Button
                 onClick={() => Auth.logout()}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               > 
