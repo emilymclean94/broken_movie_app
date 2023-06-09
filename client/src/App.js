@@ -105,7 +105,7 @@ function App() {
             <Route path="/feed" element={<Feed />} />
             {/* <Route path="/yourdashboard" element={<FriendDashboard />} /> */}
             <Route path="/mydashboard" element={<MyDashboard />} />
-            <Route path="/moviesearch" element={<MovieSearch />} />
+            {/* <Route path="/moviesearch" element={<MovieSearch />} /> */}
 
             <Route path="/homex" element={<Homex />} />
             <Route path="/swap" element={<Swap />} />
