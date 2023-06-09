@@ -49,6 +49,3 @@ const MovieTitle = styled.h3``;
 
 
 export default ToWatch;
-
-
-// button to add the movie can be used on both movie lists in friends and on the result movie divs

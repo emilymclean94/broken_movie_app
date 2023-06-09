@@ -8,9 +8,10 @@ import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 
-const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=bb8c9e655b550c820642d263e87af207";
 
-const apiKey = "bb8c9e655b550c820642d263e87af207";
+const API_URL = process.env.API_URL;
+const apiKey = process.env.API_KEY;
+
 
 function MovieSearch() {
   const [movies, setMovies] = useState([]);

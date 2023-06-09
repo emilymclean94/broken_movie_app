@@ -20,6 +20,27 @@ const UserProfile = () => {
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
 
+    return (
+      <>
+        {Auth.loggedIn() ? (<CardContainer>
+    <Avatar  sx={{ width: 200, height: 200 }}>
+    <img src={avatar} alt='user avatar' width='200px' height='200px'/>
+    </Avatar>
+      <DetailsContainer>
+          <Username>{`${user.username}`}</Username>
+          <FavoriteGenre>{`${user.firstname}`}</FavoriteGenre>
+          <Bio>generate info</Bio>
+          <UpdateProfile>Update Profile</UpdateProfile>
+      </DetailsContainer>
+    </CardContainer>) : (
+      <h4>
+        You need to be logged in to see this. Use the navigation links above to
+        sign up or log in!
+      </h4>)}
+      </>
+    );
+};
+
 
 const CardContainer = styled.div`
 display: flex;
@@ -72,23 +93,4 @@ background-color: #0077ff;
 `
 
 
-    return (
-      <>
-        {Auth.loggedIn() ? (<CardContainer>
-    <Avatar  sx={{ width: 200, height: 200 }}>
-    <img src={avatar} alt='user avatar' width='200px' height='200px'/>
-    </Avatar>
-        <DetailsContainer>
-            <Username>{`${user.username}`}</Username>
-            <FavoriteGenre>{`${user.firstname}`}</FavoriteGenre>
-            <Bio>generate info</Bio>
-            <UpdateProfile>Update Profile</UpdateProfile>
-        </DetailsContainer>
-</CardContainer>) : (
-                  <h4>
-                    You need to be logged in to see this. Use the navigation links above to
-                    sign up or log in!
-                  </h4>)}</>
-    )
-}
 export default UserProfile;
