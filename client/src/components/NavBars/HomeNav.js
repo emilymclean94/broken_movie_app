@@ -23,18 +23,16 @@ function HomeNav() {
           <Typography variant="h6" noWrap component="a" href="/" sx={{ mr: 2, display: { xs: "none", md: "flex" }, fontFamily: "Chakra Petch, sans-serif", fontWeight: 200, color: "white", textDecoration: "none"}}>
             STREAMVERSE
           </Typography>
-          <Typography >
+
             <HomeItem sx={{ textAlign: "right", fontFamily: "Chakra Petch, sans-serif", fontWeight: 200, color: "white", p: 3, display: { xs: "none" } }}>
               <SignUp/>
             </HomeItem> 
-          </Typography>
 
-          <Typography >
             <HomeItem edge="end" xs={{textAlign: "right", display: {xs:"none", md: "flex", }, p: 3, fontFamily: "Chakra Petch, sans-serif",
             fontWeight: 200, color: "white",}}>
               <LogIn/>
             </HomeItem>
-          </Typography>
+
         </Toolbar>
 
       </Container>
