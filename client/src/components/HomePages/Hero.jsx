@@ -2,8 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Box, Stack } from "@mui/material";
 import blue from "../Assets/images/blue.gif";
-import { SvgIcon } from "@mui/material";
-import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 
 const commonStyles = {
   padding: "1rem",
@@ -72,80 +70,9 @@ const HeroRight = () => {
     }
   `;
 
-  const pulseStyle = {
-    animation: "pulse 1.5s infinite",
-    
-  };
-
-  const pulseAnimation = `@keyframes pulse {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.2);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }`;
-
-  const hideAnimationStyle = `@media (max-width: 768px) {
-    .hide-animation {
-      display: none;
-    }
-  }`;
-
   return (
     <TextContainer sx={commonStyles}>
       <Stack>
-        <Stack direction="row">
-        <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-          />
-          <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-            className="hide-animation"
-          />
-          <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-            className="hide-animation"
-          />
-          <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-            className="hide-animation"
-          />
-          <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-            className="hide-animation"
-          />
-          <SvgIcon
-            component={DirectionsRunIcon}
-            viewBox="0 0 24 24"
-            color="primary"
-            style={pulseStyle}
-            className="hide-animation"
-          />
-          <style>{pulseAnimation}</style>
-          <style>{hideAnimationStyle}</style>
-        </Stack>
         <SubTitle>
           INTO THE
         </SubTitle>
@@ -161,6 +88,8 @@ const Hero = () => {
   const AppContainer = styled(Box)`
     display: flex;
     flex-direction: column-reverse;
+    height: 100%;
+    background-color: black;
 
     @media (min-width: 768px) {
       flex-direction: row;
