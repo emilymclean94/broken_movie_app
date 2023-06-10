@@ -88,6 +88,8 @@ const Hero = () => {
   const AppContainer = styled(Box)`
     display: flex;
     flex-direction: column-reverse;
+    height: 100%;
+    background-color: black;
 
     @media (min-width: 768px) {
       flex-direction: row;
