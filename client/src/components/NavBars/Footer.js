@@ -2,27 +2,26 @@ import React from "react";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 import { BsGithub } from 'react-icons/bs';
 
-
 export const Footer= () => {
   return (
     <Box
       sx={{
         width: "100%",
         height: "auto",
-        backgroundColor: "#1e0876",
         paddingTop: "1rem",
         paddingBottom: "1rem",
+        position: "relative",
       }}
     >
       <Container maxWidth="lg">
         <Grid container direction="column" alignItems="center">
           <Grid item xs={12}>
-            <Typography color="black" variant="h5">
+            <Typography color="#1e0876" variant="h5">
               StreamVerse
             </Typography>
           </Grid>
           <Grid marginTop={1} item xs={20} textAlign="center">
-            <Button label="clickable" color="white"variant="subtitle1" onClick={() => window.location.href = "http://github.com/Ashleyg5"}>
+            <Button label="clickable" color="white" variant="subtitle1" onClick={() => window.location.href = "http://github.com/Ashleyg5"}>
               {<BsGithub fontSize={18} />}
               </Button>
               <Button label="clickable" color="white" variant="subtitle1" onClick={() => window.location.href = "http://github.com/emilymclean94"}>
@@ -46,5 +45,4 @@ export const Footer= () => {
     </Box>
   );
 };
-
 export default Footer;

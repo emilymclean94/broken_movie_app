@@ -1,7 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import './Home.css';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 const Scroll1 = () => {
     return (
@@ -22,7 +22,7 @@ const Scroll1 = () => {
             <h1>and Find Friends!</h1>
             </Fade>
             <Fade  left effectOut="fadeOutTop">
-            <SignUpButton href='#navbar'className="last">Sign Up!!</SignUpButton>
+            <h1 className="last">Join StreamVerse Today!</h1>
             </Fade>
             <div class="custom-shape-divider-top-1686412855">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -32,31 +32,5 @@ const Scroll1 = () => {
         </div>
     )
 }
-const SignUpButton = styled.button`
-display: inline-block;
-outline: none;
-margin: 0;
-padding: 0;
-vertical-align: middle;
-cursor: pointer;
-font-size: 20px;
-border-radius: 500px;
-transition-property: background-color,border-color,color,box-shadow,filter;
-transition-duration: .3s;
-border: 1px solid transparent;
-min-width: 160px;
-text-transform: uppercase;
-white-space: normal;
-text-align: center;
-height: 48px;
-line-height: 48px;
-:hover{
-    transform: scale(1.04);
-    background-color: #0077ff;
-    color: #fff;
-}
-font-weight: bold;
-color: #1e0876;
-background-color: #fff;
-`
+
 export default Scroll1;

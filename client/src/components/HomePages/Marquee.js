@@ -41,6 +41,7 @@ align-items: center;
 overflow: hidden;
 height: 25rem;
 gap: 1rem;
+gap-bottom: 3rem;
 `
 const IMG = styled.img`
 -moz-animation: marquee 10s linear infinite;
